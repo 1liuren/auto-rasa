@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+#treeDiagram {
+    width: 100%;
+    height: 800px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: #999;
+    stroke-width: 2px;
+}
+
+.node text {
+    font-size: 14px;
+    fill: #333;
+}
+
+.node-text {
+    font-weight: bold;
+    cursor: default;
+}
+
+.description-text {
+    cursor: default;
+}
+
+.text-container text {
+    pointer-events: all;
+}
+
+.node-bg {
+    fill: #f8f8f8;
+    stroke: #e0e0e0;
+    stroke-width: 1px;
+    opacity: 0.8;
+}
+
+.node text {
+    font-size: 14px;
+    fill: #333;
+}
+
+.node text tspan {
+    font-size: 14px;
+    fill: #333;
+}
