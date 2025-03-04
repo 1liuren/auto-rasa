@@ -1,76 +1,64 @@
+/* 基础样式 */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-input[type="file"] {
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100vh;
+    background: white;
 }
 
 #treeDiagram {
     width: 100%;
-    height: 800px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 90vh;
+    background: white;
     overflow: auto;
 }
 
+/* 节点和连线样式 */
 .link {
     fill: none;
     stroke: #ccc;
-    stroke-width: 2px;
-}
-
-.node circle {
-    fill: #fff;
-    stroke: #999;
-    stroke-width: 2px;
-}
-
-.node text {
-    font-size: 14px;
-    fill: #333;
-}
-
-.node-text {
-    font-weight: bold;
-    cursor: default;
-}
-
-.description-text {
-    cursor: default;
-}
-
-.text-container text {
-    pointer-events: all;
-}
-
-.node-bg {
-    fill: #f8f8f8;
-    stroke: #e0e0e0;
     stroke-width: 1px;
-    opacity: 0.8;
 }
 
-.node text {
-    font-size: 14px;
-    fill: #333;
+.node circle.node-dot {
+    fill: #4a90e2;
+    stroke: #2171c7;
+    stroke-width: 1.5px;
+    cursor: pointer;
 }
 
-.node text tspan {
+/* 工具提示样式 */
+.node-tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 300px;
     font-size: 14px;
-    fill: #333;
+}
+
+/* 缩放控制按钮 */
+.zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.zoom-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
 }

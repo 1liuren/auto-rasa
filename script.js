@@ -127,110 +127,267 @@ function buildStepNode(step, allSteps) {
     return stepNode;
 }
 
+// 添加缩放控制
+let currentZoom = d3.zoomIdentity;
+
+function setupZoomControls(svg) {
+    const zoom = d3.zoom()
+        .scaleExtent([0.1, 4])
+        .on('zoom', (event) => {
+            currentZoom = event.transform;
+            svg.attr('transform', event.transform);
+        });
+
+    d3.select('#zoomIn').on('click', () => {
+        zoom.scaleBy(svg.transition().duration(300), 1.2);
+    });
+
+    d3.select('#zoomOut').on('click', () => {
+        zoom.scaleBy(svg.transition().duration(300), 0.8);
+    });
+
+    d3.select('#zoomReset').on('click', () => {
+        svg.transition().duration(300)
+            .call(zoom.transform, d3.zoomIdentity);
+    });
+
+    return zoom;
+}
+
+// 添加搜索功能
+function setupSearch(nodes) {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        nodes.each(function(d) {
+            const node = d3.select(this);
+            const text = (d.data.name + (d.data.description || '')).toLowerCase();
+            const matches = text.includes(searchTerm);
+            node.style('opacity', matches || !searchTerm ? 1 : 0.3);
+        });
+    });
+}
+
+// 添加节点折叠/展开功能
+function toggleNode(d) {
+    if (d.children) {
+        d._children = d.children;
+        d.children = null;
+    } else {
+        d.children = d._children;
+        d._children = null;
+    }
+    update(d);
+}
+
+// 添加工具提示
+function addTooltip(node) {
+    const tooltip = d3.select('body').append('div')
+        .attr('class', 'tooltip')
+        .style('opacity', 0);
+
+    node.on('mouseover', function(event, d) {
+        tooltip.transition()
+            .duration(200)
+            .style('opacity', .9);
+        tooltip.html(`
+            <strong>${d.data.name}</strong><br/>
+            ${d.data.description || ''}
+        `)
+            .style('left', (event.pageX + 10) + 'px')
+            .style('top', (event.pageY - 28) + 'px');
+    })
+    .on('mouseout', function() {
+        tooltip.transition()
+            .duration(500)
+            .style('opacity', 0);
+    });
+}
+
 // 使用 D3.js 渲染树状图
 function renderTree(data) {
+    // 清空现有内容
     const treeDiagram = d3.select('#treeDiagram');
     treeDiagram.html('');
 
+    // 设置尺寸
+    const margin = {top: 20, right: 90, bottom: 30, left: 90};
     const width = 2000;
     const height = 800;
-    const nodeWidth = 300; // 增加节点宽度
-    const nodeHeight = 100; // 增加节点高度
 
-    const root = d3.hierarchy(data);
-    const treeLayout = d3.tree()
-        .size([height, width - 400]) // 增加左右间距
-        .separation((a, b) => (a.parent === b.parent ? 2 : 3)); // 增加节点间的间隔
-
-    treeLayout(root);
-
+    // 创建SVG
     const svg = treeDiagram.append('svg')
         .attr('width', width)
         .attr('height', height)
-        .call(d3.zoom().on('zoom', (event) => {
-            svg.attr('transform', event.transform);
-        }))
-        .append('g')
-        .attr('transform', 'translate(100, 50)');
+        .style('background', 'white');
 
-    // 绘制连线
-    svg.selectAll('.link')
+    // 创建主要的g元素
+    const g = svg.append('g')
+        .attr('transform', `translate(${margin.left},${margin.top})`);
+
+    // 创建树布局
+    const tree = d3.tree()
+        .size([height - margin.top - margin.bottom, width - margin.left - margin.right]);
+
+    // 创建层级数据
+    const root = d3.hierarchy(data);
+    
+    // 计算树布局
+    tree(root);
+
+    // 创建工具提示
+    const tooltip = d3.select('body').append('div')
+        .attr('class', 'node-tooltip')
+        .style('opacity', 0);
+
+    // 绘制连接线
+    g.selectAll('.link')
         .data(root.links())
         .enter()
         .append('path')
         .attr('class', 'link')
         .attr('d', d3.linkHorizontal()
             .x(d => d.y)
-            .y(d => d.x)
-        );
+            .y(d => d.x));
 
-    // 绘制节点和文字
-    const node = svg.selectAll('.node')
+    // 创建节点组
+    const node = g.selectAll('.node')
         .data(root.descendants())
         .enter()
         .append('g')
         .attr('class', 'node')
         .attr('transform', d => `translate(${d.y},${d.x})`);
 
-    // 添加节点背景矩形
-    node.append('rect')
-        .attr('class', 'node-bg')
-        .attr('x', d => d.children ? -nodeWidth : 10)
-        .attr('y', -nodeHeight / 2)
-        .attr('width', nodeWidth)
-        .attr('height', nodeHeight)
-        .attr('rx', 5)
-        .attr('ry', 5);
-
     // 添加节点圆点
     node.append('circle')
-        .attr('r', 5);
-
-    // 添加文字包装函数
-    function wrap(text, width) {
-        text.each(function() {
-            const text = d3.select(this);
-            const words = text.text().split(/\s+/).reverse();
-            let word;
-            let line = [];
-            let lineNumber = 0;
-            const lineHeight = 1.1;
-            const y = text.attr("y");
-            const dy = parseFloat(text.attr("dy"));
-            let tspan = text.text(null).append("tspan").attr("x", function(d) { return d.children ? -10 : 10; }).attr("y", y).attr("dy", dy + "em");
+        .attr('class', 'node-dot')
+        .attr('r', 5)
+        .on('mouseover', function(event, d) {
+            // 显示工具提示
+            tooltip.transition()
+                .duration(200)
+                .style('opacity', 1);
             
-            while (word = words.pop()) {
-                line.push(word);
-                tspan.text(line.join(" "));
-                if (tspan.node().getComputedTextLength() > width) {
-                    line.pop();
-                    tspan.text(line.join(" "));
-                    line = [word];
-                    tspan = text.append("tspan")
-                        .attr("x", function(d) { return d.children ? -10 : 10; })
-                        .attr("y", y)
-                        .attr("dy", ++lineNumber * lineHeight + dy + "em")
-                        .text(word);
-                }
+            // 设置工具提示内容
+            let tooltipContent = `<strong>${d.data.name || 'Unnamed'}</strong>`;
+            if (d.data.description) {
+                tooltipContent += `<br/>${d.data.description}`;
             }
+            if (d.data.text) {
+                tooltipContent += `<br/><br/>${d.data.text}`;
+            }
+            
+            tooltip.html(tooltipContent)
+                .style('left', (event.pageX + 10) + 'px')
+                .style('top', (event.pageY - 10) + 'px');
+        })
+        .on('mouseout', function() {
+            tooltip.transition()
+                .duration(500)
+                .style('opacity', 0);
         });
+
+    // 添加缩放功能
+    const zoom = d3.zoom()
+        .scaleExtent([0.1, 3])
+        .on('zoom', (event) => {
+            g.attr('transform', event.transform);
+        });
+
+    svg.call(zoom);
+
+    // 初始缩放以适应屏幕
+    const initialScale = 0.75;
+    svg.call(zoom.transform, d3.zoomIdentity
+        .translate(margin.left, margin.top)
+        .scale(initialScale));
+}
+
+
+// 添加缩放按钮事件处理
+if (document.getElementById('zoomIn')) {
+    document.getElementById('zoomIn').addEventListener('click', () => {
+        const svg = d3.select('#treeDiagram svg');
+        const zoom = d3.zoom().on('zoom', (event) => {
+            svg.select('g').attr('transform', event.transform);
+        });
+        svg.transition().call(zoom.scaleBy, 1.2);
+    });
+}
+
+if (document.getElementById('zoomOut')) {
+    document.getElementById('zoomOut').addEventListener('click', () => {
+        const svg = d3.select('#treeDiagram svg');
+        const zoom = d3.zoom().on('zoom', (event) => {
+            svg.select('g').attr('transform', event.transform);
+        });
+        svg.transition().call(zoom.scaleBy, 0.8);
+    });
+}
+
+if (document.getElementById('zoomReset')) {
+    document.getElementById('zoomReset').addEventListener('click', () => {
+        const svg = d3.select('#treeDiagram svg');
+        const zoom = d3.zoom().on('zoom', (event) => {
+            svg.select('g').attr('transform', event.transform);
+        });
+        svg.transition().call(zoom.transform, d3.zoomIdentity.translate(90, 20).scale(0.75));
+    });
+}
+
+// 格式化工具提示内容
+function formatTooltipContent(data) {
+    let content = `<div class="tooltip-title">${data.name || 'Unnamed Node'}</div>`;
+    content += '<div class="tooltip-content">';
+    
+    // 添加描述信息
+    if (data.description) {
+        content += `<div>${data.description}</div>`;
     }
+    
+    // 添加其他相关信息
+    if (data.main_intent) {
+        content += `<div>Intent: ${data.main_intent}</div>`;
+    }
+    if (data.main_intent_zh) {
+        content += `<div>中文意图: ${data.main_intent_zh}</div>`;
+    }
+    
+    content += '</div>';
+    return content;
+}
 
-    // 添加主文本
-    node.append('text')
-        .attr('dy', '-1.5em')
-        .attr('x', d => d.children ? -10 : 10)
-        .style('text-anchor', d => d.children ? 'end' : 'start')
-        .text(d => d.data.name || d.data.key)
-        .call(wrap, nodeWidth - 20);
+// 获取节点类型指示器
+function getNodeTypeIndicator(data) {
+    // 根据节点类型返回不同的指示符号
+    if (data.children && data.children.length > 0) {
+        return '●';  // 父节点
+    } else {
+        return '○';  // 叶节点
+    }
+}
 
-    // 添加描述文本
-    node.append('text')
-        .attr('dy', '1em')
-        .attr('x', d => d.children ? -10 : 10)
-        .style('text-anchor', d => d.children ? 'end' : 'start')
-        .style('font-size', '12px')
-        .style('fill', '#666')
-        .text(d => d.data.description || '')
-        .call(wrap, nodeWidth - 20);
+// 添加缩放控制
+function setupZoomControls(svg) {
+    const zoom = d3.zoom()
+        .scaleExtent([0.1, 4])
+        .on('zoom', (event) => {
+            svg.select('g').attr('transform', event.transform);
+        });
+
+    svg.call(zoom);
+
+    // 添加缩放按钮事件处理
+    d3.select('#zoomIn').on('click', () => {
+        zoom.scaleBy(svg.transition().duration(300), 1.2);
+    });
+
+    d3.select('#zoomOut').on('click', () => {
+        zoom.scaleBy(svg.transition().duration(300), 0.8);
+    });
+
+    d3.select('#zoomReset').on('click', () => {
+        svg.transition().duration(300)
+            .call(zoom.transform, d3.zoomIdentity);
+    });
 }

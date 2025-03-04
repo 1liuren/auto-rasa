@@ -1,0 +1,2769 @@
+version: '3.1'
+responses:
+  utter_card_payment-general-employee:
+  - custom:
+      text: |
+        您好，对于在职员工，医保卡金发放数额计算公式如下：
+        本人月缴费基数乘以1.8%，再减去5元的大病医疗保险。
+      end: 0
+      main_intent: ask-card_payment-general
+      main_intent_zh: 卡金发放-通用
+      human_relation: '{human_relation}'
+  utter_card_payment-general-retired_employee_under70_years_old:
+  - custom:
+      text: |
+        您好，对于年龄小于70周岁的退休职工，医保卡金发放数额为100元。
+      end: 0
+      main_intent: ask-card_payment-general
+      main_intent_zh: 卡金发放-通用
+      human_relation: '{human_relation}'
+  utter_card_payment-general-retired_employee_over70_years_old:
+  - custom:
+      text: |
+        您好，对于年龄大于70周岁的退休职工，医保卡金发放数额为150元。
+      end: 0
+      main_intent: ask-card_payment-general
+      main_intent_zh: 卡金发放-通用
+      human_relation: '{human_relation}'
+  utter_card_payment-general-abnormal_value:
+  - custom:
+      text: |
+        对不起，您的问题超出了我的认知，正在帮您转接人工服务。
+      end: 0
+      main_intent: ask-card_payment-general
+      main_intent_zh: 卡金发放-通用
+      human_relation: '{human_relation}'
+  utter_card_payment-balance_arrival_time-employee:
+  - custom:
+      text: |
+        您好，对于在职职工，医保卡金会在单位缴费到账后，由市局统一拨付，当月月底之前到账。
+      end: 0
+      main_intent: ask-card_payment-balance_arrival_time
+      main_intent_zh: 卡金发放-卡金到账时间
+      human_relation: '{human_relation}'
+  utter_card_payment-balance_arrival_time-retired_employee:
+  - custom:
+      text: |
+        您好，对于退休职工，医保卡金当月月底之前到账。
+      end: 0
+      main_intent: ask-card_payment-balance_arrival_time
+      main_intent_zh: 卡金发放-卡金到账时间
+      human_relation: '{human_relation}'
+  utter_card_payment-balance_arrival_time-abnormal_value:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: ask-card_payment-balance_arrival_time
+      main_intent_zh: 卡金发放-卡金到账时间
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_payment-balance_wrong:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-card_payment-balance_wrong
+      main_intent_zh: 卡金发放-卡金数错误
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_payment-balance_details_inquiry:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-card_payment-balance_details_inquiry
+      main_intent_zh: 卡金发放-查询卡金明细
+      human_relation: '{human_relation}'
+  utter_card_abnormality-general-in_other_places_and_filling:
+  - custom:
+      text: |
+        您好，医保异地备案后出现异常，可能有以下原因：
+         1. 办理异地备案时未关联本人银行账户,所以医保局每月发放的卡金无法正常到账。
+         2. 社保卡所关联的银行账户本身可能还未收到本月的卡金到账，建议查询一下金融账户
+      end: 0
+      main_intent: ask-card_abnormality-general
+      main_intent_zh: 卡金异常-买药无法使用/医保卡余额为0
+      human_relation: '{human_relation}'
+  utter_card_abnormality-general-in_other_places_not_filling:
+  - custom:
+      text: |
+        您好，医保卡在异地使用出现异常，可能有以下原因：
+         1. 省外不支持跨省刷卡，需要先办理长期异地备案。
+         2. 本人办理异地备案后，次月会将医保卡金拨付至医保卡绑定的金融账户，本人可以直接刷银行卡进行结算。
+      end: 0
+      main_intent: ask-card_abnormality-general
+      main_intent_zh: 卡金异常-买药无法使用/医保卡余额为0
+      human_relation: '{human_relation}'
+  utter_card_abnormality-general-in_local_physical:
+  - custom:
+      text: |
+        您好， 医保卡在本地使用出现异常，可能有如下原因: 
+        社保卡未激活或者制卡有问题，建议联系银行查询一下制卡信息
+      end: 0
+      main_intent: ask-card_abnormality-general
+      main_intent_zh: 卡金异常-买药无法使用/医保卡余额为0
+      human_relation: '{human_relation}'
+  utter_card_abnormality-general-in_local_electronic:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: ask-card_abnormality-general
+      main_intent_zh: 卡金异常-买药无法使用/医保卡余额为0
+      human_relation: '{human_relation}'
+  utter_card_abnormality-general-abnormal_value:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: ask-card_abnormality-general
+      main_intent_zh: 卡金异常-买药无法使用/医保卡余额为0
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_abnormality-filling_bank_no_money:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-card_abnormality-filling_bank_no_money
+      main_intent_zh: 卡金异常-备案后钱未进银行卡
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_transfer_out-arrears:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-card_transfer_out-arrears
+      main_intent_zh: 卡金提取-转出欠费
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_transfer_out-location_verification_failed:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-card_transfer_out-location_verification_failed
+      main_intent_zh: 卡金提取-转出地校验失败
+      human_relation: '{human_relation}'
+  utter_faq/ask-card_balance_inquiry-general:
+  - custom:
+      text: |
+        您好，对于青岛参保/退休职工，有以下两种方式可以进行医保卡账户余额查询：
+          1、登录“青岛市医疗保障局”官网：  http://ybj.qingdao.gov.cn/ 。
+             点击个人办事使用身份证号注册登陆，进入“个人网厅”，选择“医疗个人信息”模块，选择“个人账户明细查询”进行查询。
+          2、关注“青岛医疗保障”微信公众号”，点击“掌办大厅”模块下“掌上办-我的医保”，前往“登陆”模块下的“医保个账”页面，点击“账户明细”进行查询。
+        根据这些步骤，可以方便地查询到医保卡的余额。
+      end: 0
+      main_intent: faq/ask-card_balance_inquiry-general
+      main_intent_zh: 卡金余额查询-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-death_of_insured_person:
+  - custom:
+      text: |
+        您好，参保人员死亡，可由经办人携带有效材料申请办理个人账户余额一次性支付手续，包括：
+        (1) 死亡证明
+        (2) 经办人身份证
+        (3) 情况说明
+        (4) 去世人银行卡（如若没有银行卡需公证处出具财产分割证明）
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-chinese_nationals_living_abroad:
+  - custom:
+      text: |
+        您好，中国籍出国定居，可携带有关材料申请办理个人账户余额一次性支付手续，包括：
+        (1) 定居证
+        (2) 身份证
+        (3) 银行卡
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-departure_from_hongkong_macao_taiwan:
+  - custom:
+      text: |
+        您好，港澳台人员离境，可携带有关材料申请办理个人账户余额一次性支付手续，包括：
+        (1) 港澳台居住证
+        (2) 银行卡
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-foreign_nationals_returning_home:
+  - custom:
+      text: |
+        您好，外籍人员回国，可携带有关材料申请办理个人账户余额一次性支付手续，包括：
+        (1) 就业证的注销证明（外国人专家局）
+        (2) 护照
+        (3) 银行卡
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-transfer_out_completed:
+  - custom:
+      text: |
+        您好，本人已办理医保转出业务，可参照以下步骤进行卡金提取：
+        1.关注“青岛医疗保障”微信公众号
+        2.点击“掌办大厅”模块下“掌上办-我的医保”功能
+        3.前往“登陆”模块下的“医保个账”页面
+        4.点击“医疗保险参保人员个人账户一次性支取”，按照要求填写信息提交后，15个工作日即可到账。
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-transfer_out_not_completed:
+  - custom:
+      text: |
+        1、您好，由于本人未办理医保关系转出，应先按照以下2种方式办理医保关系转出：
+         (1) 网上办理：
+             登录“青岛市医疗保障局”官方网站： http://ybj.qingdao.gov.cn/ 
+             选择“网办大厅”模块下的“个人办事”功能
+             前往“跨省通办”下的“基本医疗关系转出申请”页面进行办理
+         (2) 现场办理：
+             携带有效身份证件、社保卡或电子医保凭证，到青岛市市任一医保经办机构申请办理。省内9个工作日，省外15个工作日办理完成。
+        2、本人医保关系转出办理完成后，可按如下流程进行卡金一次性提取：
+             (1) 关注“青岛医疗保障”微信公众号
+             (2) 点击“掌办大厅”模块下“掌上办我的医保”功能
+             (3) 前往“登陆”模块下的“医保个账”页面
+             (4) 点击“医疗保险参保人员个人账户一次性支取”按照要求填写信息提交后，15个工作日即可到账。
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-available:
+  - custom:
+      text: |
+        您好，由于转出地卡金随年限一起转移，可按照以下2种方式办理医保关系转入：
+          1、网上办理
+           （1）登录“青岛市医疗保障局”官方网站： http://ybj.qingdao.gov.cn/ ，选择“网办大厅”模块下的“个人办事”功能，前往“我要办”下的“医疗保险关系转入（国家平台）”页面进行办理。
+           （2）关注“青岛医疗保障”微信公众号”，点击“掌办大厅”模块下“掌上办-我的医保”，前往“登陆”模块下的“更多功能”页面，进入“医保征缴”页面，点击“医疗保险关系转入（国家平台）”进行办理。
+          2、现场办理：
+            携带有效身份证件、社保卡或电子医保凭证，到青岛市市任一医保经办机构申请办理。省内9个工作日，省外15个工作日办理完成。
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_card_transfer_business-general-inavailable:
+  - custom:
+      text: |
+        您好，请咨询转出地医保局办理卡金提取相关业务。
+      end: 0
+      main_intent: ask-card_transfer_business-general
+      main_intent_zh: 卡金划转-通用
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-employee_interruption:
+  - custom:
+      text: |
+        您好，医保中断无法领取生育津贴。
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-employee_non_interruption_less_than_1year:
+  - custom:
+      text: |
+        您好，由于您生育或流产、引产前连续缴纳医保时间未满一年，待您连续足额缴纳医疗保险满1年后，可以补支生育津贴，申领生育津贴的方式和材料如下：
+        1、申领方式：
+        （1）关注微信公众号“青岛医疗保障”选择“生育津贴支付”提交申请；
+        （2）登陆“青岛市医疗保障局官网”选择“生育津贴支付”提交申请；
+        （3）线下办理可到各区市医疗保险经办机构、医保工作站申请办理；
+        （4）单位可登陆“青岛市医疗保障局官网”选择“生育津贴支付”提交申请。
+        2、申领材料：
+        （1）申请生育津贴需提供出院记录、出生医学证明（异地生育必要材料）；
+        （2）流产津贴需提供出院记录或门诊病历及流产前后b超检查结果；
+        （3）现场办理还需提供社保卡或身份证及银行卡号。
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-employee_non_interruption_greater_than_1year_after_2024:
+  - custom:
+      text: |
+        您好：
+        一、2023年12月1日起，正式实施“免审即享”，在我市企业参加职工社会医疗保险，已在青岛定点医疗机构联网结算生育医疗费用，定点医疗机构上传的“免申即享”业务数据，按生育职工参保区划，在生育医疗费结算次月，由“医疗保障信息平台系统”直接推送至各、区市医保经办机构。各、区市医保经办机构10个工作日内审核。
+        二、查询方式：通过“免审即享”发放生育津贴的，单位可通过青岛医疗保障局官网查询到职工生育津贴待遇发放情况，个人可通过青岛医疗保障局官网、青岛医疗保障公众号、青岛医保小程序查询到生育津贴办理进度及发放情况。
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-employee_non_interruption_greater_than_1year_before_2024:
+  - custom:
+      text: |
+        您好，申领生育津贴的方式和材料如下：
+        1、申领方式：
+        （1）参保职工生育或流产、引产次月申领生育津贴可关注微信公众号“青岛医疗保障”选择“生育津贴支付”提交申请；
+        （2）单位或个人办理，可登陆“青岛市医疗保障局官网”选择“生育津贴支付”提交申请；
+        （3）线下办理可到各区市医疗保险经办机构、医保工作站申请；
+        （4）单位可登陆"青岛市医疗保障局官网"选择"生育津贴支付"提交申请。
+        2、申领材料：
+        （1）申请生育津贴需提供出院记录；出生医学证明；
+        （2）流产津贴需提供出院记录或门诊病历及流产前后b超检查结果；
+        （3）现场办理还需提供社保卡或身份证及银行卡号。
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-non_employee:
+  - custom:
+      text: |
+        您好，只有企业职工可以领取生育津贴。
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_childbirth_allowance-process-abnormal_value:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: ask-childbirth_allowance-process
+      main_intent_zh: 生育津贴-领取流程
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_allowance-conditions:
+  - custom:
+      text: |
+        您好，生育津贴享受条件：女职工在用人单位参加职工社会医疗保险，生育或流产、引产时，在我市连续足额缴费满1年以上的，可享受生育津贴。
+      end: 0
+      main_intent: faq/ask-childbirth_allowance-conditions
+      main_intent_zh: 生育津贴-领取条件
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_allowance-abortion_days:
+  - custom:
+      text: |
+        您好，根据现行规定：
+        （1）生育津贴天数：女职工享受98天产假，剖腹产享受113天产假，多胞胎每增加一胎追加15天。
+        （2）流产津贴天数：女职工妊娠时间为4个月以下流产的可享受15天产假，妊娠时间为4个月以上37周以下流、引产的可享受42天产假，37周以上引产可享受98天产假。
+      end: 0
+      main_intent: faq/ask-childbirth_allowance-abortion_days
+      main_intent_zh: 生育津贴-流产津贴天数
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_allowance-days:
+  - custom:
+      text: |
+        您好，根据现行规定：
+        （1）生育津贴天数：女职工享受98天产假，剖腹产享受113天产假，多胞胎每增加一胎追加15天。
+        （2）流产津贴天数：女职工妊娠时间为4个月以下流产的可享受15天产假，妊娠时间为4个月以上37周以下流、引产的可享受42天产假，37周以上引产可享受98天产假。
+      end: 0
+      main_intent: faq/ask-childbirth_allowance-days
+      main_intent_zh: 生育津贴-生育津贴天数
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_allowance-time:
+  - custom:
+      text: |
+        您好，生育津贴可以在生完孩子次月后申请。
+      end: 0
+      main_intent: faq/ask-childbirth_allowance-time
+      main_intent_zh: 生育津贴-领取时间
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_subsidy-process:
+  - custom:
+      text: |
+        生育补助金领取分为以下几种情况：
+        （一） 以下四种情形无法领取生育补助金：
+         1.男方未参加职工医保。
+         2.男方职工医保当前断缴。
+         3.男方配偶参加职工医保。
+         4.男方配偶住院费高于男方生育补助金标准。
+        （二）以下两种情形可以领取生育补助金：
+         1.男方职工医保未断缴，且男方配偶参加居民医保：
+         男方配偶住院费低于男方生育补助金标准，则按规定予以补足差额。
+         2.男方职工医保未断缴，且男方配偶未参加居民医保：
+         生育补助金按照男方单位女职工生育医疗费用标准的50%进行补助。
+        （三）办理材料：参保职工可持本人社会保障卡或身份证及银行卡号、出院记录、发票、明细清单、出生医学证明、医保报销单、配偶无工作单位证明或本人承诺书前往办事大厅进行业务办理。
+      end: 0
+      main_intent: faq/ask-childbirth_subsidy-process
+      main_intent_zh: 生育补助金-领取流程
+      human_relation: '{human_relation}'
+  utter_faq/ask-childbirth_allowance-calculation_method:
+  - custom:
+      text: |
+        生育津贴领取金额可以按照如下方式计算：
+        1、生育津贴天数：顺产天数为98天，剖腹产天数为113天；怀孕未满4个月流产的天数为15天；怀孕4个月以上流产、引产的，天数为42天；
+        2、生育津贴金额 = 单位所有人员上年度平均工资除以30乘以生育津贴的天数。
+      end: 0
+      main_intent: faq/ask-childbirth_allowance-calculation_method
+      main_intent_zh: 生育津贴-能领多少钱
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-material-childbirth:
+  - custom:
+      text: |
+        您好，办理生育报销需要以下材料：出院记录、新生儿出生医学证明、发票、明细清单、社保卡或身份证及银行卡号。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-material
+      main_intent_zh: 生育报销-报销材料
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-material-abortion:
+  - custom:
+      text: |
+        您好，办理流产报销需要以下材料：出院记录或门诊病历及流产前后b超检查结果、发票、明细清单、社保卡或身份证及银行卡号。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-material
+      main_intent_zh: 生育报销-报销材料
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-resident_other_place_childbirth:
+  - custom:
+      text: |
+        您好，异地生育无法联网报销，申请生育报销的方式如下：
+        1、参保居民或大学生医保申请生育报销可关注 微信公众号“青岛医疗保障”选择“生育医疗费支付”提交申请；
+        2、登陆“青岛市医疗保障局官网”选择“生育医疗费支付”提交申请；
+        3、还可到各区市医疗保险经办机构、医保工作站申请办理。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-resident_local_childbirth:
+  - custom:
+      text: |
+        您好，可以直接联网报销。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-resident_other_place_abortion:
+  - custom:
+      text: |
+        您好，城乡居民医保或大学生医保流、引产无法报销。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-employee_other_place_childbirth:
+  - custom:
+      text: |
+        您好，异地生育无法联网报销，申请生育报销的方式如下：
+        1、参保职工申领生育报销可关注 微信公众号“青岛医疗保障”选择“生育医疗费支付”提交申请；
+        2、或登陆“青岛市医疗保障局官网”选择“生育医疗费支付”提交申请；
+        3、也可到各区市医疗保险经办机构、医保工作站申请办理。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-employee_other_place_abortion:
+  - custom:
+      text: |
+        您好，异地流产、引产无法联网报销，申请流产、引产报销的方式如下：
+        1、参保职工申领生育报销可关注 微信公众号“青岛医疗保障”选择“计划生育医疗费支付”提交申请；
+        2、或登陆“青岛市医疗保障局官网”选择“计划生育医疗费支付”提交申请；
+        3、也可到各区市医疗保险经办机构、医保工作站申请办理。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-employee_local:
+  - custom:
+      text: |
+        您好，可以直接联网报销。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-process-employee_non_access_to_medical_treatment:
+  - custom:
+      text: |
+        您好，由于医保中断，不能进行报销。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-process
+      main_intent_zh: 生育报销-报销流程
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-employee_childbirth_hospitalized:
+  - custom:
+      text: |
+        您好，职工住院：三级医院最高报销5900元，二级医院最高报销4600元，一级医院最高报销2800元。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-employee_childbirth_prenatal_check_up:
+  - custom:
+      text: |
+        您好，职工医保产前检查可以报销1600元。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-employee_abortion_hospitalized:
+  - custom:
+      text: |
+        您好，早期妊娠门诊流产最高报销550元，小于8周妊娠住院流产最高报销800元，8到12周妊娠住院流产最高报销1000元，12到16周妊娠住院流引产最高报销1200元，16到37周妊娠住院流引产最高报销1300元，大于37周妊娠住院引产最高报销2500元。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-employee_abortion_prenatal_check_up:
+  - custom:
+      text: |
+        您好，小于16周妊娠住院流引产的不报产前检查费，16到37周妊娠住院流引产和大于37周妊娠住院引产的，按每人1600元标准报销。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-resident_childbirth_hospitalized:
+  - custom:
+      text: |
+        您好，农村合作医疗最高能报3000元。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-resident_childbirth_prenatal_check_up:
+  - custom:
+      text: |
+        您好，农村合作医疗不报产前检查费。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-resident_abortion_hospitalized:
+  - custom:
+      text: |
+        您好，农村合作医疗不报销流产、引产费用。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_childbirth_reimbursement-ratio-resident_abortion_prenatal_check_up:
+  - custom:
+      text: |
+        您好，农村合作医疗不报销产前检查费。
+      end: 0
+      main_intent: ask-childbirth_reimbursement-ratio
+      main_intent_zh: 生育报销-比例
+      human_relation: '{human_relation}'
+  utter_faq/ask-reimbursement_expenses-standard:
+  - custom:
+      text: |
+        您好，基本医疗保险起付线（住院、门诊慢特病）如下：
+        1、三级医院800元，6家三级甲等医院（青岛大学附属医院、青岛市市立医院、青岛市中心医院、青岛市海慈医疗集团、山东大学齐鲁医院、中国人民解放军海军第九七一医院）1000元，
+        2、二级医院500元
+        3、一级医院和社区医院200元。
+        4、第一次住院全额承担、第二次减半、第三次及以上最低0元；门诊大病单独负责。尿毒症、器官移植、精神病等大病个人负担的起付线可以适当减免。
+      end: 0
+      main_intent: faq/ask-reimbursement_expenses-standard
+      main_intent_zh: 报销费用-起付标准
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-is_local_user:
+  - custom:
+      text: |
+        您好，青岛市定点医疗机构均已开通联网异地结算业务，对于起付标准、支付比例、最高支付限额等执行参保地的医保政策，具体详情请咨询参保地医保经办机构。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-long_term_filing:
+  - custom:
+      text: |
+        您好，办理长期备案后，医疗费用享受与本市就医相同的医保报销比例；
+        注：备案后不满6个月回本市就医的，报销比例如下：
+         1、通过提交备案就医地户籍证明、居住证或单位工作证明等材料，医疗费用享受与本市就医相同的医保报销比例；
+         2、不能提供就医地户籍证明、居住证或单位工作证明等材料的，基本医疗保险基金和大病医疗保险资金支付比例比本市同级医疗机构降低5个百分点。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-temporary_treatment_outside:
+  - custom:
+      text: |
+        您好，临时外出就医人员在省内、跨省住院医疗费用，基本医疗保险基金和大病医疗保险资金支付比例比本市同级医疗机构降低5个百分点。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_employee:
+  - custom:
+      text: |
+        您好，在职职工门诊费报销比例如下：
+        1.一级医院跟社区是按照80%比例报销，无起付线；
+        2.二级医院是按照70%比例报销，起付线为500元；
+        3.三级医院是按照60%的比例报销，起付线为800元；
+        4.普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_retired_employee:
+  - custom:
+      text: |
+        您好，退休职工门诊费报销比例如下：
+        1.一级医院跟社区是按照85%比例报销无起付线；
+        2.二级医院是按照75%比例报销，起付线为500元；
+        3.三级医院是按照65%的比例报销，起付线为800元；
+        4.普通门诊统筹最高支付限额为7000元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_first_resident_first:
+  - custom:
+      text: |
+        您好，城乡居民一档在签约的基层医疗支付比例为60%，一个年度内最高支付限额为800元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_second_resident_second:
+  - custom:
+      text: |
+        您好，城乡居民二档在签约的基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_second_resident_children:
+  - custom:
+      text: |
+        您好，少年儿童在签约的基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_undergraduate:
+  - custom:
+      text: |
+        您好，大学生支付比例为80%，只能定点在校医院，无最高支付限额，异地最高支付限额为800元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_flexible_employment:
+  - custom:
+      text: |
+        您好，灵活就业人员的门诊费报销比例同在职职工，报销比例如下：
+                    1、一级医院跟社区是按照80%比例报销，无起付线；
+                    2、二级医院是按照70%比例报销，起付线为500元；
+                    3、三级医院是按照60%的比例报销，起付线为800元，
+                    4、普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_employee:
+  - custom:
+      text: |
+        您好，一个年度内，职工医保参保人在定点医药机构发生的医保支付范围内门诊慢特病医疗费用，起付标准以上的部分，报销比例下:
+          1、在二、三级定点医疗机构分别报销88％、86％，超过病种限额标准以上的部分报销50%；
+          2、在社区定点医疗机构和一级医院机构报销92%，超过病种限额标准以上的部分报销70%。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_retired_employee:
+  - custom:
+      text: |
+        您好，一个年度内，职工医保参保人在定点医药机构发生的医保支付范围内门诊慢特病医疗费用，起付标准以上的部分，报销比例下：
+         1、在二、三级定点医疗机构分别报销88％、86％，超过病种限额标准以上的部分报销50%；
+         2、在社区定点医疗机构和一级医院机构报销92%，超过病种限额标准以上的部分报销70%。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_resident_first:
+  - custom:
+      text: |
+        您好，城乡一档居民门诊慢特病报销比例如下：
+          1、在社区、一、二、三级定点医疗机构，一档缴费的成年居民支付比例分别为80%、80%、70%、65%，
+          2、成年居民在实行基本药物制度的社区定点医疗机构使用基本药物发生的医疗费，支付比例提高10个百分点。
+          3、超过种限额标准以上的部分，在社区、一级定点医疗机构支付比例为30%；在二、三级定点医疗机构不予支付。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_resident_second:
+  - custom:
+      text: |
+        您好，城乡二档居民门诊慢特病报销比例如下：
+         1、二档缴费的成年居民在签约的社区定点、一、二、三级定点医疗机支付比例分别为80%、80%、65%、60%；
+         2、成年居民在实行基本药物制度的社区定点医疗机构使用基本药物发生的医疗费，支付比例提高10个百分点。
+         3、超过病种限额标准以上的部分，在社区、一级定点医疗机构支付比例为30%；在二、三级定点医疗机构不予支付。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_children:
+  - custom:
+      text: |
+        您好，少年儿童门诊慢特病报销比例如下：
+         少年儿童在社区定点、一、二、三级定点医疗机构支付比例分别为90%、90%、85%、80%，享受独生子女待遇的少年儿童，支付比例提高5个百分点
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_undergraduate:
+  - custom:
+      text: |
+        您好，大学生门诊慢特病报销比例如下：
+         大学生在社区定点、一、二、三级定点医疗机构支付比例分别为90%、90%、85%、80%。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-outpatient_chronic_flexible_employment:
+  - custom:
+      text: |
+        您好，一个年度内，参保人在定点医药机构发生的医保支付范围内门诊慢特病医疗费用，起付标准以上的部分，报销比例如下：
+        1、在二、三级定点医疗机构分别报销88％、86％，超过病种限额标准以上的部分报销50%；
+        2、在社区定点医疗机构和一级医院机构报销92%，超过病种限额标准以上的部分报销70%。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_flexible_employment:
+  - custom:
+      text: |
+        您好，在定点医疗机构住院发生的医保支付范围内医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+                     1、医保参保人住院，年度累计在4万元以下的部分，退休（职）前在一、二、三级定点医疗机构分别报销90%、88%、86%；
+                     2、年度累计4万元以上的部分，不分区医疗机构级别，退休（职）前统一报销95%。
+                     3、参保人住院医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_employee:
+  - custom:
+      text: |
+        您好，在定点医疗机构住院发生的医保支付范围内医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+           1、职工医保参保人住院，年度累计在4万元以下的部分，退休（职）前在一、二、三级定点医疗机构分别报销90%、88%、86%；
+           2、年度累计4万元以上的部分，不分区医疗机构级别，退休（职）前统一报销95%。
+           3、参保职工住院、门诊慢特病医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_retired_employee:
+  - custom:
+      text: |
+        您好，在定点医疗机构住院发生的医保支付范围内医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+        1、职工医保参保人住院，年度累计在4万元以下的部分，退休（职）后在一、二、三级定点医疗机构分别报销95%、94%、93%；
+        2、年度累计4万元以上的部分，不分区医疗机构级别，退休（职）后统一报销97%。
+        3、参保职工住院、门诊慢特病医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_first_resident:
+  - custom:
+      text: |
+        您好，居民一档参保人住院，发生的医保支付范围内的医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+        1、成年居民在一、二、三级定点医疗机构分别报销85%、80%、70%。
+        2、成年居民在实行基本药物制度的街道、镇卫生院（社区卫生服务中心）住院，报销比例提高5个百分比。
+        3、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_second_resident:
+  - custom:
+      text: |
+        您好，居民二档参保人住院，发生的医保支付范围内的医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+        1、成年居民在一、二、三级定点医疗机构分别报销85%、75%、55%。
+        2、成年居民在实行基本药物制度的街道、镇卫生院（社区卫生服务中心）住院，报销比例提高5个百分比。
+        3、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_undergraduate:
+  - custom:
+      text: |
+        您好，大学生参保人住院，发生的医保支付范围内的医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+        1、大学生在一、二、三级定点医疗机构分别报销90%、85%、80%。
+        2、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-hospitalized_children:
+  - custom:
+      text: |
+        您好，少年儿童参保人住院，发生的医保支付范围内的医疗费用，起付线以上的部分，基本医疗保险报销比例如下：
+        1、少年儿童在一、二、三级定点医疗机构分别报销90%、85%、80%。
+        2、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。少年儿童属独生子女的提高5个百分点。"
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_outpatient_employee_resident:
+  - custom:
+      text: |
+        您好，职工医保、成年居民医保或灵活就业人员在门急诊发生的意外伤害费用无法报销。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_outpatient_is_third_party_liability_children_undergraduate:
+  - custom:
+      text: |
+        您好，经有关部门认定参保人承担部分责任的意外伤害，由第三方责任人承担的部分，由责任人按照有关法律法规优先给予赔偿，赔偿后剩余部分医保经办机构按规定予以补差。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_outpatient_no_third_party_liability_children_undergraduate:
+  - custom:
+      text: |
+        您好：
+        （1）少年儿童、大学生因意外伤害发生的门急诊医疗费用，社会医疗保险统筹支付范围内超过100元以上的部分，由基本医疗保险基金按照90%的比例支付，年度最高支付3000元。
+        （2）享受独生子女待遇的少年儿童，基本医疗保险基金支付比例增加5个百分点。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_is_third_party_liability:
+  - custom:
+      text: |
+        您好，经有关部门认定参保人承担部分责任的意外伤害，由第三方责任人承担的部分，由责任人按照有关法律法规优先给予赔偿，赔偿后剩余部分医保经办机构按规定予以补差。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_employee:
+  - custom:
+      text: |
+        您好：在职职工参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付: 起付线以上的部分，基本医疗保险报销比例如下：
+        1、职工医保参保人住院，年度累计在4万元以下的部分，退休（职）前在一、二、三级定点医疗机构分别报销90%、88%、86%；
+        2、年度累计4万元以上的部分，不分区医疗机构级别，退休（职）前统一报销95%。
+        3、参保职工住院、门诊慢特病医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_retired_employee:
+  - custom:
+      text: |
+        您好：退休职工参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付，起付线以上的部分，基本医疗保险报销比例如下：
+        1、职工医保参保人住院，年度累计在4万元以下的部分，退休（职）后在一、二、三级定点医疗机构分别报销95%、94%、93%；
+        2、年度累计4万元以上的部分，不分区医疗机构级别，退休（职）后统一报销97%。
+        3、参保职工住院、门诊慢特病医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_first_resident:
+  - custom:
+      text: |
+        您好，居民一档参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付，起付线以上的部分，基本医疗保险报销比例如下：
+        1、成年居民在一、二、三级定点医疗机构分别报销85%、80%、70%。
+        2、成年居民在实行基本药物制度的街道、镇卫生院（社区卫生服务中心）住院，报销比例提高5个百分比。
+        3、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_second_resident:
+  - custom:
+      text: |
+        您好，居民二档参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付，起付线以上的部分，基本医疗保险报销比例如下：
+        1、成年居民在一、二、三级定点医疗机构分别报销85%、75%、55%。
+        2、成年居民在实行基本药物制度的街道、镇卫生院（社区卫生服务中心）住院，报销比例提高5个百分比。
+        3、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_undergraduate:
+  - custom:
+      text: |
+        您好，大学生参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付，起付线以上的部分，基本医疗保险报销比例如下：
+        1、大学生在一、二、三级定点医疗机构分别报销90%、85%、80%。
+        2、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized_no_third_party_liability_children:
+  - custom:
+      text: |
+        您好，少年儿童参保人参保人因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付，起付线以上的部分，基本医疗保险报销比例如下：
+        1、少年儿童在一、二、三级定点医疗机构分别报销90%、85%、80%。
+        2、参保居民住院、门诊慢特病医疗费用，基本医疗保险在一个年度最高支付限额为18万元。少年儿童属独生子女的提高5个百分点
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_expenses-ratio-accident_hospitalized _no_third_party_liability_flexible_employment:
+  - custom:
+      text: |
+        您好：灵活就业人员因意外伤害发生的住院医疗费用，由社会医疗保险基金按照社会医疗保险住院待遇标准支付: 起付线以上的部分，基本医疗保险报销比例如下：
+        1、参保人住院，年度累计在4万元以下的部分，在一、二、三级定点医疗机构分别报销90%、88%、86%；
+        2、年度累计4万元以上的部分，不分区医疗机构级别，统一报销95%。
+        3、参保人住院、门诊慢特病医疗费用，基本医疗保险一个年度最高支付限额为20万元。
+      end: 0
+      main_intent: ask-reimbursement_expenses-ratio
+      main_intent_zh: 报销费用-报销比例
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-cannot_access_to_medical_treatment:
+  - custom:
+      text: |
+        您好，缴费异常是无法享受医疗待遇的。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_resident_not_confirmed:
+  - custom:
+      text: |
+        您好，居民医保需要签约一家基层定点医疗机构才能报销，签约后发生的符合门诊统筹支付范围的普通门诊医疗费，由基本医疗保险统筹基金按有关规定执行。
+        报销比例、限额：
+        （1）城乡居民一档报销比例为60%，一个年度内最高支付限额为800元。
+        （2）城乡居民二挡、少年儿童在基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_resident_confirmed_local:
+  - custom:
+      text: |
+        您好，本地定点医疗机构就医可以直接联网结算，如在签约的定点医疗机构无法报销的，建议转人工具体咨询。
+        报销比例、限额：
+        （1）城乡居民一档支付比例为60%，一个年度内最高支付限额为800元。
+        （2）城乡居民二挡、少年儿童在基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_resident_confirmed_out_of_province:
+  - custom:
+      text: |
+        您好：
+        1、省外定点医疗机构就医需要办理异地就医备案，操作备案后可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、报销比例、限额：
+        （1）城乡居民一档报销比例为60%，一个年度内最高支付限额为800元。
+        （2）城乡居民二挡、少年儿童在基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_resident_confirmed_in_province:
+  - custom:
+      text: |
+        您好：
+        1、省内定点医疗机构就医可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、报销比例、限额：
+        （1）城乡居民一档报销比例为60%，一个年度内最高支付限额为800元。
+        （2）城乡居民二挡、少年儿童在基层医疗机构报销比例达60%，一个年度内最高支付限额为600元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_college_students_confirmed_local:
+  - custom:
+      text: |
+        您好，大学生医保只能定点在校医院，在校医院发生的符合门诊统筹支付范围的普通门诊医疗费，可以直接联网报销，在校医院无法报销的，建议转人工具体咨询。
+        报销比例、限额：校医院报销比例为80%，无最高支付限额。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_college_students_out_of_province:
+  - custom:
+      text: |
+        您好：
+        1、省外定点医疗机构就医需要办理异地就医备案，操作备案后可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、报销比例、限额：报销比例为80%，限额800元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_college_students_confirmed_in_province:
+  - custom:
+      text: |
+        您好：
+        （1）省内定点医疗机构就医可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        （2）如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        （3）报销比例、限额：报销比例为80%，限额800元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_employees_confirmed_local:
+  - custom:
+      text: |
+        您好：
+        1、本地定点医疗机构就医可以直接联网结算，如在定点医疗机构无法报销的，建议转人工具体咨询。
+        2、在职职工报销比例、限额：
+        （1）一级医院、社区医院报销比例80%，无起付线；
+        （2）二级医院报销比例70%，起付线为500元；
+        （3）三级医院报销比例60%，起付线为800元；
+        （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_retired_employees_confirmed_local:
+  - custom:
+      text: |
+        您好：
+        1、本地定点医疗机构就医可以直接联网结算，如在定点医疗机构无法报销的，建议转人工具体咨询。
+        2、退休职工报销比例、限额：
+        （1）一级医院、社区医院报销比例85%，无起付线；
+        （2）二级医院报销比例75%，起付线为500元；
+        （3）三级医院报销比例65%，起付线为800元，
+        （4）普通门诊统筹最高支付限额为7000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_flexible_confirmed_local:
+  - custom:
+      text: |
+        您好：
+        1、本地定点医疗机构就医可以直接联网结算，如在定点医疗机构无法报销的，建议转人工具体咨询。
+        2、灵活就业人员的报销比例同在职职工报销比例、限额：
+        （1）一级医院、社区医院报销比例80%，无起付线；
+        （2）二级医院报销比例70%，起付线为500元；
+        （3）三级医院报销比例60%，起付线为800元；
+        （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_flexible_employment _confirmed_out_of_province:
+  - custom:
+      text: |
+        您好，省外定点医疗机构就医需要根据个人情况办理长期/临时异地就医备案，操作备案后可以直接联网结算。
+         1、如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+         2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+         3、灵活就业人员的报销比例同在职职工报销比例、限额：
+         （1）一级医院、社区医院：临时就医备案后报下比例75%，办理长期备案后报销比例80%，无起付线；
+         （2）二级医院：临时就医备案后报销比例65%，办理长期备案后报销比例70%，起付线为500元；
+         （3）三级医院：临时就医备案后报销比例55%，办理长期备案后报销比例60%，起付线为800元，
+         （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_flexible_employment _confirmed_in_province:
+  - custom:
+      text: |
+        您好，省内定点医疗机构临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算。
+         1、如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+         2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+         3、灵活就业人员的报销比例同在职职工报销比例、限额：
+         （1）一级医院、社区医院：临时就医报销比例75%，办理长期备案后报销比例80%，无起付线；
+         （2）二级医院：临时就医报销比例65%，办理长期备案后报销比例70%，起付线为500元；
+         （3）三级医院：临时就医报销比例55%，办理长期备案后报销比例60%，起付线为800元，
+         （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_employees_out_of_province:
+  - custom:
+      text: |
+        您好：
+        1、省外定点医疗机构就医需要根据个人情况办理长期/临时异地就医备案，操作备案后可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、在职职工报销比例、限额：
+        （1）一级医院、社区医院：临时就医备案后报下比例75%，办理长期备案后报销比例80%，无起付线；
+        （2）二级医院：临时就医备案后报销比例65%，办理长期备案后报销比例70%，起付线为500元；
+        （3）三级医院：临时就医备案后报销比例55%，办理长期备案后报销比例60%，起付线为800元；
+        （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_retired_employees_out_of_province:
+  - custom:
+      text: |
+        您好：
+         1. 省外定点医疗机构就医需要根据个人情况办理长期/临时异地就医备案，操作备案后可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+         2. 如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+         3. 退休职工报销比例、限额：
+         （1）一级医院跟社区：临时就医备案后报销比例80%，办理长期备案后报销比例85%，无起付线；
+         （2）二级医院：临时就医备案后报销比例70%，办理长期备案后报销比例75%，起付线为500元；
+         （3）三级医院：临时就医备案后报销比例60%，办理长期备案后报销比例65%，起付线为800元；
+         （4）普通门诊统筹最高支付限额为7000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_employees_in_province:
+  - custom:
+      text: |
+        您好：
+        1、省内定点医疗机构临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、在职职工报销比例、限额：
+        （1）一级医院、社区医院：临时就医报销比例75%，办理长期备案后报销比例80%，无起付线；
+        （2）二级医院：临时就医报销比例65%，办理长期备案后报销比例70%，起付线为500元；
+        （3）三级医院：临时就医报销比例55%，办理长期备案后报销比例60%，起付线为800元；
+        （4）普通门诊统筹最高支付限额为6000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_retired_employees_in_province:
+  - custom:
+      text: |
+        您好：
+        1、省内临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合医保支付范围内的门诊统筹费用，参保人可先行垫付后，参保人可先行垫付后，在当年未达到限额的情况下，次年提供医院收费有效票据、费用汇总明细清单、门诊病历等材料进行审核报销。
+        3、退休职工支付比例、限额：
+        （1）一级医院跟社区：临时就医报销比例80%，办理长期备案后报销比例85%，无起付线；
+        （2）二级医院：临时就医报销比例70%，办理长期备案后报销比例75%，起付线为500元；
+        （3）三级医院：临时就医报销比例60%，办理长期备案后报销比例65%，起付线为800元；
+        （4）普通门诊统筹最高支付限额为7000元。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_no_disease_applied:
+  - custom:
+      text: |
+        您好，需要提供材料申请门诊慢特病病种，申请通过后在签约定点医疗机构发生跟病种相关费用联网结算，门诊慢特病病种核准日期前的医疗费用不纳入基本医疗保险统筹结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_disease_applied_local:
+  - custom:
+      text: |
+        您好，在签约定点医疗机构发生跟病种相关费用可以直接联网结算，如在签约定点医疗机构无法报销的，建议转人工具体咨询。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_disease_applied_out_of_province_not_dual_channel:
+  - custom:
+      text: |
+        您好：
+        1、省外就医仅限高血压合并症、糖尿病合并症、恶性肿瘤门诊治疗、尿毒症透析、器官移植术后抗排异治疗等五个病种联网结算，其余病种需回参保地手工报销。
+        2、可联网结算病种需办理长期或临时异地就医备案，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        3、如果报错在短时间内不能马上解决，对于符合规定可报销的门诊慢特病费用，参保人可先行垫付后，提供医院收费有效票据、费用汇总明细清单、门诊病历、处方等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_disease_applied_out_of_province_dual_channel:
+  - custom:
+      text: |
+        您好，在省外双通道药店拿门诊慢特病相关药品暂时无法联网结算，需回参保地手工审核结算。可提供医院收费有效票据、费用汇总明细清单、门诊病历、处方及治疗医院出具的有效外购或外检证明和“双通道”药店或外检机构的医保协议证明等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_disease_applied_in_province_not_dual_channel:
+  - custom:
+      text: |
+        您好：
+        1、省内临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合规定可报销的门诊慢特病费用，参保人可先行垫付后，参保人可先行垫付后，提供医院收费有效票据、费用汇总明细清单、门诊病历、处方等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-outpatient_chronic_disease_applied_in_province_dual_channel:
+  - custom:
+      text: |
+        您好：
+        1、省内临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合规定可报销的门诊慢特病费用，参保人可先行垫付后，参保人可先行垫付后，提供医院收费有效票据、费用汇总明细清单、门诊病历、处方及治疗医院出具的有效外购或外检证明和“双通道”药店或外检机构的医保协议证明等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-hospitalization_local:
+  - custom:
+      text: |
+        您好，可以直接联网结算，如在定点医疗机构无法报销的，建议转人工具体咨询。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-hospitalization_out_of_province:
+  - custom:
+      text: |
+        您好：
+        1、省外就医需要根据个人情况办理长期或临时异地就医备案，操作备案后可以直接联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合规定可报销的住院费用，参保人可先行垫付后，参保人可先行垫付后，提供医院收费有效票据、费用汇总明细清单、出院记录、住院病历等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-hospitalization_in_province:
+  - custom:
+      text: |
+        您好：
+        1、省内临时就医可以直接联网结算，省内长期异地居住人员需要办理长期异地就医备案后联网结算，如联网结算出现报错，首先排除医院系统原因，再提供报错信息转人工具体咨询。
+        2、如果报错在短时间内不能马上解决，对于符合规定可报销的住院费用，参保人可先行垫付后，参保人可先行垫付后，提供医院收费有效票据、费用汇总明细清单、出院记录、住院病历等材料到医保经办机构进行审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_outpatient_employees:
+  - custom:
+      text: |
+        您好，职工医保或成年居民医保在门诊发生的意外伤害费用无法报销。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_outpatient_children_undergraduate_not_third_party_liability_local:
+  - custom:
+      text: |
+        您好，少年儿童或大学生医保在定点医疗机构发生的意外伤害门急诊费用，在就诊的定点医疗机构可以直接进行“一站式”即时审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_outpatient_children_undergraduate_not_third_party_liability_not_local:
+  - custom:
+      text: |
+        您好，异地就医需要根据个人情况办理长期或临时异地就医备案，符合就医地管理规定的无第三方责任外伤费用科纳入异地就医直接联网结算范围，相关费用由就医地经办机构进行核查，如果联网有问题，建议提供报错信息转人工具体查询。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_outpatient_children_undergraduate_third_party_liability:
+  - custom:
+      text: |
+        您好：
+        1、经有关部门认定参保人承担部分责任的意外伤害，由第三方责任人承担的部分，由责任人按照有关法律法规优先给予赔偿，赔偿后剩余部分医保经办机构按规定予以补差。
+        2、意外伤害不支付的情形：
+        （一）有隐瞒、欺诈行为的，包括提供虚假外伤时间、地点、事故原因、救治经过、虚假证明材料以及伪造外伤医疗文书等；
+        （二）实施吸毒、使用管制药品(遵医嘱用药除外)、打架斗殴、醉酒滋事等违法行为所致的；
+        （三）应当由责任人负担的；
+        （四）应当从工伤保险基金或生育保险基金中支付的；
+        （五）应当由公共卫生负担的；
+        （六）在境外发生的医疗费用。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_hospitalization_not_third_party_liability_local:
+  - custom:
+      text: |
+        您好，青岛参保人在就诊的定点医疗机构可以直接进行“一站式”即时审核结算。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_hospitalization_not_third_party_liability_not_local:
+  - custom:
+      text: |
+        您好，异地就医需要根据个人情况办理长期或临时异地就医备案，符合就医地管理规定的无第三方责任外伤费用科纳入异地就医直接联网结算范围，相关费用由就医地经办机构进行核查，如果联网有问题，建议提供报错信息转人工具体查询。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_process-general-accident_hospitalization_third_party_liability_not_local:
+  - custom:
+      text: |
+        您好：
+        1、经有关部门认定参保人承担部分责任的意外伤害，由第三方责任人承担的部分，由责任人按照有关法律法规优先给予赔偿，赔偿后剩余部分医保经办机构按规定予以补差。
+        2、意外伤害不支付的情形：
+        （一）有隐瞒、欺诈行为的，包括提供虚假外伤时间、地点、事故原因、救治经过、虚假证明材料以及伪造外伤医疗文书等；
+        （二）实施吸毒、使用管制药品(遵医嘱用药除外)、打架斗殴、醉酒滋事等违法行为所致的；
+        （三）应当由责任人负担的；
+        （四）应当从工伤保险基金或生育保险基金中支付的；
+        （五）应当由公共卫生负担的；
+        （六）在境外发生的医疗费用。
+      end: 0
+      main_intent: ask-reimbursement_process-general
+      main_intent_zh: 报销流程-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_material-general-outpatient_chronic:
+  - custom:
+      text: |
+        您好，报销需要携带以下材料：医院收费有效票据、费用明细汇总清单、门诊病历、处方。
+      end: 0
+      main_intent: ask-reimbursement_material-general
+      main_intent_zh: 报销材料-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_material-general-hospitalization:
+  - custom:
+      text: |
+        您好，报销需要携带以下材料：医院收费有效票据、费用明细汇总清单、出院记录（诊断材料）、急诊连续观察时间在24小时以上（急诊抢救死亡者除外）和急诊转住院的，需另外提供（急）诊治疗病历。
+      end: 0
+      main_intent: ask-reimbursement_material-general
+      main_intent_zh: 报销材料-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_material-general-outpatient_fees:
+  - custom:
+      text: |
+        您好，报销需要携带以下材料：医院收费有效票据、费用明细汇总清单、门诊病历。
+      end: 0
+      main_intent: ask-reimbursement_material-general
+      main_intent_zh: 报销材料-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_material-general-accidental_Injury_not a third party liability:
+  - custom:
+      text: |
+        您好，报销需要携带以下材料：医院收费有效票据、费用汇总明细清单、出院记录（诊断材料）、急诊连续观察时间在24小时以上（急诊抢救死亡者除外）和急诊转住院的，需另外提供（急）诊治疗病历、病历复印件、外伤无第三方责任承诺书。
+      end: 0
+      main_intent: ask-reimbursement_material-general
+      main_intent_zh: 报销材料-通用
+      human_relation: '{human_relation}'
+  utter_reimbursement_material-general-accidental_Injury_It is third party liability:
+  - custom:
+      text: |
+        您好，报销需要携带以下材料：医院收费有效票据、费用汇总明细清单、出院记录（诊断材料）、急诊连续观察时间在24小时以上（急诊抢救死亡者除外）和急诊转住院的，需另外提供（急）诊治疗病历、病历复印件、第三方赔付相关材料。
+      end: 0
+      main_intent: ask-reimbursement_material-general
+      main_intent_zh: 报销材料-通用
+      human_relation: '{human_relation}'
+  utter_outpatient_coordination-sign_hospital-resident:
+  - custom:
+      text: |
+        您好，居民参保人可签约的定点医疗机构及签约方式如下：
+        1、定点医疗机构：基层定点医疗机构（含一级医院）
+        2、签约方式：
+        （1）掌上办理：关注“青岛医疗保障”微信公众号，依次选择“掌上办、我的医保、门诊统筹、立即申办”，按提示勾选并提交，成功后会给予提示。
+        （2）网上办理：登陆青岛市医疗保障局官方网站，依次点击“网办大厅、个人办事、医保待遇、门诊统筹签约门诊”，按提示勾选并提交，成功后会给予提示。
+        （3）定点医疗机构办理：参保人到所选择的定点医疗机构提出申请，签订《青岛市基本医疗保险门诊统筹医疗服务协议》，即时办理，自签约之日起享受门诊统筹支付待遇。
+      end: 0
+      main_intent: ask-outpatient_coordination-sign_hospital
+      main_intent_zh: 门诊统筹-签约定点医院
+      human_relation: '{human_relation}'
+  utter_outpatient_coordination-sign_hospital-emploee:
+  - custom:
+      text: |
+        您好，职工参保人自2024年2月1日起，取消对职工医保门诊统筹实行定点签约的规定，参保职工在所有开展门诊统筹业务的定点医疗机构可自由选择就医，均按规定享受门诊统筹待遇。
+      end: 0
+      main_intent: ask-outpatient_coordination-sign_hospital
+      main_intent_zh: 门诊统筹-签约定点医院
+      human_relation: '{human_relation}'
+  utter_outpatient_coordination-sign_hospital-student:
+  - custom:
+      text: |
+        您好：
+        （1）少年儿童（16岁以下）医保签约需要家长打开微信搜索“青岛医疗保障”公众号，关注“青岛医疗保障”公众号，添加亲情账号，选中孩子，即可办理医保签约业务。
+        （2）大学生由所属学校统一签约。
+      end: 0
+      main_intent: ask-outpatient_coordination-sign_hospital
+      main_intent_zh: 门诊统筹-签约定点医院
+      human_relation: '{human_relation}'
+  utter_faq/ask-reimbursement_outpatient_coordination-signed_hospital_amount:
+  - custom:
+      text: |
+        您好，城乡居民医疗保险参保人签约门诊统筹定点医疗机构时，需要注意以下几点：
+        （1）每位参保人只能签订一家门诊统筹定点医疗机构
+        （2）在同一个保险年度内，原则上只能变更一次。在进行变更之前，参保人应确保与原定点医疗机构结清所有费用。
+        （3）如果因为病情变化、地址变迁等原因确实需要再次变更签约定点医疗机构，参保人可以个人提出申请。申请经医保经办机构审核通过后，将予以变更。
+      end: 0
+      main_intent: faq/ask-reimbursement_outpatient_coordination-signed_hospital_amount
+      main_intent_zh: 门诊统筹-签订医院的数量
+      human_relation: '{human_relation}'
+  utter_faq/ask-reimbursement_outpatient_coordination-low_insured_objects:
+  - custom:
+      text: |
+        您好：
+        1、对于低保对象，门诊费用中个人自付部分可获得90%的救助，年度救助上限为640元。
+        2、 对于低保边缘家庭成员，门诊费用中个人自负部分可获得80%的救助，年度救助上限同样为640元。
+      end: 0
+      main_intent: faq/ask-reimbursement_outpatient_coordination-low_insured_objects
+      main_intent_zh: 门诊统筹-低保对象门诊救助
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-process:
+  - custom:
+      text: |
+        您好：
+        一、目前青岛市长期护理保险制度保障对象仅限参加本市社会医疗保险参保人员。
+        二、本市社会医疗保险参保人员办理长期护理保险的具体流程如下：
+        1、由本人或家属向定点护理机构、评估机构提出照护需求等级评估申请，填写《青岛市失能失智人员照护需求等级评估申请表》
+        2、通过以下两种方式进行提交申请：
+        （1）现场申请：可以前往定点护理机构。机构名称及地址可在“青岛市医疗保障局”官网 http://ybj.qingdao.gov.cn 进行查询。
+        （2）微信公众号申请：
+        微信搜索“青岛医疗保障”公众号，点击进入后，依次点击“掌办大厅”、“掌上办、我的医保”，找到“医保常用”，依次点击“长期护理”、“长期护理保险待遇评估申请”，按需上传相关信息并提交。
+        2、填写并提交资料后进入机构初筛，医疗保障经办机构收到申请之日起3个工作日内反馈受理审核结果。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-process
+      main_intent_zh: 长期护理精准问答-申请流程
+      human_relation: '{human_relation}'
+  utter_faq/ask-reimbursement_outpatient_coordination-explanation:
+  - custom:
+      text: |
+        您好，门诊统筹意思是：
+        1、参保职工在定点医疗机构发生的符合门诊统筹支付范围的医疗费用，可按规定享受报销待遇；
+        2、居民医保需签约一家定点医疗机构[含街道（镇）卫生院或社区卫生服务中心一体化管理的村卫生室]，在签约定点医疗机构发生的符合门诊统筹支付范围的医疗费用，可按规定享受报销待遇。
+      end: 0
+      main_intent: faq/ask-reimbursement_outpatient_coordination-explanation
+      main_intent_zh: 门诊统筹-什么是门诊统筹
+      human_relation: '{human_relation}'
+  utter_payment-standard-adult_resident_first:
+  - custom:
+      text: |
+        您好，从2025年度起, 成年居民医保一档缴费标准为每人每年482元。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-standard-adult_resident_second:
+  - custom:
+      text: |
+        您好，从2025年度起,  成年居民医保二档缴费标准为每人每年415元。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-standard-children:
+  - custom:
+      text: |
+        您好，从2025年度起, 少年儿童医保缴费标准为每人每年415元。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-standard-undergraduate:
+  - custom:
+      text: |
+        您好，从2025年度起, 在校大学生医保缴费标准为每人每年170元。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-standard-employee:
+  - custom:
+      text: |
+        您好，在职职工以本人工资为缴费基数，按照2%的比例由所在单位代扣代缴。
+        用人单位是以本单位职工工资总额为缴费基数，按照8%的比例缴纳；
+        失业人员在领取失业保险金期间应当缴纳的基本医疗保险费，从失业保险基金中支付。
+        用人单位是以本单位职工工资总额为缴费基数，按照8%的比例缴纳；灵活就业人员按照个人缴费基数的8.5%缴纳。失业人员在领取失业保险金期间应当缴纳的基本医疗保险费，从失业保险基金中支付。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-standard-retired_employee:
+  - custom:
+      text: |
+        您好，职工社会医疗保险参保人员累计缴费年限男满25年、女满20年的，退休（职）后不再缴纳基本医疗保险费，按照规定享受职工社会医疗保险待遇。
+        如果参保人员达到法定退休年龄，但未达到职工基本医疗保险最低缴费年限，可以按照规定一次性缴费后，从办理补缴次月起享受退休人员基本医疗保险待遇；也可以继续按月缴费至最低缴费年限，期间按照在职人员享受基本医疗保险待遇。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_payment-way-registered:
+  - custom:
+      text: |
+        您好，已经完成参保登记的，通过税务机关提供的线上或线下缴费渠道完成缴费即可。（崂山税务电话：81601083）
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-resident_unregistered:
+  - custom:
+      text: |
+        您好，城乡居民办理医保需要准备：有效身份证件（开通电子证照的，可无需提供、《城乡居民基本医疗保险参保登记表》进行参保登记，办理方式如下：
+        （一）现场办理
+        城乡居民户籍所在地的街道办事处（镇人民政府）、街道保障中心和居（村）民委员会。
+        （二）网上办理
+        青岛市医疗保障局官网：http://ybj.qingdao.gov.cn
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-company_unregistered_july_after:
+  - custom:
+      text: |
+        您好，2024年7月及以后的月份直接通过税务渠道办理缴费即可。
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-company_unregistered_july_befor:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-undergraduate_unregistered:
+  - custom:
+      text: |
+        各类学校、学前教育机构负责本校（园）学生儿童的参保登记办理。
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-flexible_employee_unregistered:
+  - custom:
+      text: |
+        您好，灵活就业人员可以前往交通银行/农业银行/农商银行/工商银行/青岛邮政/青岛银行进行参保登记后，通过税务机关提供的线上或线下缴费渠道完成缴费即可。（崂山税务电话：81601083）。
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-non_local_not_in_school_children_unregistered:
+  - custom:
+      text: |
+        您好，非本市学籍儿童参保登记流程如下：
+        1、携带户口簿（父母一方关系证明）、《山东省居住证》原件（开通电子证照的，可无需提供原件），前往就近的街道保障中心办理医保缴费；
+        2、登录“青岛市医疗保障局”官方网站（http://ybj.qingdao.gov.cn）进行办理；
+        3、通过网办大厅点击“个人办事”，登录后依次进入“个人网厅、医保征缴、城乡居民参保登记”；
+        4、通过“青岛医疗保障”微信公众号，依次进入掌办大厅、掌上办、我的医保、居民医保、城乡居民参保登记并缴费。
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-local_not_in_school_children_unregistered:
+  - custom:
+      text: |
+        您好，本市户籍未入学的少年儿童办理医保缴费流程如下：
+        1、前往户籍所在地或者居住地的街道办事处（镇人民政府）和居（村）民委员会办理办理参保登记并缴费
+        2、登录青岛市医疗保障局”官方网站（http://ybj.qingdao.gov.cn）
+        3、“青岛医疗保障”微信公众号办理参保登记并缴费
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-way-in_school_children_unregistered:
+  - custom:
+      text: |
+        您好，本市中等以下学校学籍的全日制学生、学前教育机构在册儿童,以及其他具有本市户籍未满十八周岁的少年儿童由所在学校办理居民医疗保险参保登记并缴费
+      end: 0
+      main_intent: ask-payment-way
+      main_intent_zh: 缴费-渠道
+      human_relation: '{human_relation}'
+  utter_payment-material-individual:
+  - custom:
+      text: |
+        您好，现场缴费需要携带：本人人身份证。
+      end: 0
+      main_intent: ask-payment-material
+      main_intent_zh: 缴费-材料
+      human_relation: '{human_relation}'
+  utter_payment-material-company:
+  - custom:
+      text: |
+        您好，现场缴费需要携带：经办人身份证，营业执照照片进行缴费。
+      end: 0
+      main_intent: ask-payment-material
+      main_intent_zh: 缴费-材料
+      human_relation: '{human_relation}'
+  utter_payment-details_inquiry-individual:
+  - custom:
+      text: |
+        您好，可以通过以下两种方式进行缴费明细查询：
+        1.登录青岛市医疗保障局官方网站（ http://ybj.qingdao.gov.cn ），依次选择“网办大厅、个人办事、医保征缴、个人缴费明细查询”。
+        2.关注“青岛医疗保障”微信公众号，登录后点击“医保信息一键查”查看即可。
+      end: 0
+      main_intent: ask-payment-details_inquiry
+      main_intent_zh: 缴费-明细查询
+      human_relation: '{human_relation}'
+  utter_payment-details_inquiry-company:
+  - custom:
+      text: |
+        您好，用人单位可通过“青岛市医疗保障局”官网，依次选择“网办大厅、单位办事、参保缴费、职工缴费明细查询”进行查询。
+      end: 0
+      main_intent: ask-payment-details_inquiry
+      main_intent_zh: 缴费-明细查询
+      human_relation: '{human_relation}'
+  utter_faq/ask-payment_general-details_print_method:
+  - custom:
+      text: |
+        您好，参保人员参保信息（包含缴费明细）查询打印流程如下:
+        (一)现场查询：
+        个人持身份证或社会保障卡通过服务大厅自助打印机、窗口查询打印参保缴费证明(个人权益记录)；
+        (二)网上查询：
+        (1)个人注册登录网上服务系统或登录青岛医疗保障微信公众号，依次选择“注册信息、掌办大厅、我的医保、更多功能、注册”，用身份证号注册或手机号注册登录，进入自助打印的模块，再依次选择“自助打印、医疗保险参保证明”，选择开始结束年月，然后保存图片。图片上面会有缴费基数和公章。
+        (2)灵活就业人员可通过交通银行手机APP查询打印个人权益记录。
+        (三)如果着急打印缴费明细，可以去往现场进行打印办理。现场办理需要写明委托，具体内容包括：答应时间段时间的明细，委托单位，委托人，单位公章。
+      end: 0
+      main_intent: faq/ask-payment_general-details_print_method
+      main_intent_zh: 缴费精准问答-缴费明细打印方法
+      human_relation: '{human_relation}'
+  utter_faq/ask-payment_general-mutiple_places:
+  - custom:
+      text: |
+        您好，居民医保已经实现全国联网，如果已在一座城市办理参保，则无法再在另一个城市办理医保参保。
+      end: 0
+      main_intent: faq/ask-payment_general-mutiple_places
+      main_intent_zh: 缴费精准问答-多地重复缴费
+      human_relation: '{human_relation}'
+  utter_faq/ask-payment_general-resident_employee_simultaneous:
+  - custom:
+      text: |
+        您好，职工医保和居民医保不能同时享受，政策不允许重复参保。
+      end: 0
+      main_intent: faq/ask-payment_general-resident_employee_simultaneous
+      main_intent_zh: 缴费精准问答-同时参保职工居民保险
+      human_relation: '{human_relation}'
+  utter_faq/ask-payment_general-interruption_influence:
+  - custom:
+      text: |
+        您好：
+        1、退休主要参考累计缴费月数是否达标，中断缴费不作为退休参考依据。
+        2、参保单位中断缴费的，自中断缴费的次月起暂停支付其职工医保待遇;参保单位自补齐欠费和滞纳金次月起，恢复其职工医保待遇。
+      end: 0
+      main_intent: faq/ask-payment_general-interruption_influence
+      main_intent_zh: 缴费精准问答-断缴影响
+      human_relation: '{human_relation}'
+  utter_supplement-process-employee_labor_relations_after_july_24:
+  - custom:
+      text: |
+        您好，补缴2024年7月及之后的费用，有两种情况：
+             1. 如果员工欠费时间段已入职该单位， 直接通过税务渠道办理缴费即可。
+             2. 如果员工欠费时间段与该单位无劳工关系，单位无法为员工办理补缴业务。
+      end: 0
+      main_intent: ask-supplement-process
+      main_intent_zh: 补缴-流程
+      human_relation: '{human_relation}'
+  utter_supplement-process-employee_labor_relations_before_july_24:
+  - custom:
+      text: |
+        您好，补缴2024年7月前的费用有以下两种情形：
+              1.  如果员工欠费时间段已入职该单位：
+              （1）补缴近6个月内(含当月)费用：请准备《从业人员补缴医疗保险费申请表》（加盖单位公章），登录青岛市医疗保障局官网： http://ybj.qingdao.gov.cn 。选择网上经办--个人全额补缴，上传材料后医保工作人员审核材料并补缴。
+              （2）补缴36个月以内(不包含近6个月内)费用：请准备就业关系材料、装订成册会计凭证原件、《从业人员补缴医疗保险费申请表》（加盖单位公章），携带材料现场审核办理。
+              （3）补缴36个月及以上的费用：需要联系医保稽核部门进行处理。（崂山医保稽核电话：88996881）
+              2.  如果员工欠费时间段与该单位无劳工关系，单位无法为员工办理补缴业务。
+              
+      end: 0
+      main_intent: ask-supplement-process
+      main_intent_zh: 补缴-流程
+      human_relation: '{human_relation}'
+  utter_supplement-process-flexible_employee_registered:
+  - custom:
+      text: |
+        您好：
+         (1) 补缴23年1月及之后的月份需通过税务途径办理。（崂山税务电话：810601083）
+         (2) 补缴23年1月之前的月份需要到签约银行或者医保局现场办理。
+      end: 0
+      main_intent: ask-supplement-process
+      main_intent_zh: 补缴-流程
+      human_relation: '{human_relation}'
+  utter_supplement-process-flexible_employee_unregistered:
+  - custom:
+      text: |
+        您好，可以直接去银行办理灵活就业参保登记并缴费。
+      end: 0
+      main_intent: ask-supplement-process
+      main_intent_zh: 补缴-流程
+      human_relation: '{human_relation}'
+  utter_supplement-material-company:
+  - custom:
+      text: |
+        您好：
+        在职职工办理医保补缴需要从业人员补交医疗保险费申请表、本人社保卡或身份证。
+        事业单位新增人员补缴需携带以下材料：
+        事业单位聘用登记表、机关补收表、调令或介绍信、机关事业单位参加工作人员核定工资花名册、机关事业单位工作人员入编凭证、青岛市机关事业单位参保人员2021年度社会保险缴费基数申报表。
+      end: 0
+      main_intent: ask-supplement-material
+      main_intent_zh: 补缴-材料
+      human_relation: '{human_relation}'
+  utter_supplement-material-individual:
+  - custom:
+      text: |
+        您好：
+        退休职工办理补缴材料如下：
+        1、本人办理补缴需要携带养老退休待遇审批表、本人社保卡或身份证。
+        2、离职职工办理补缴材料如下：
+        《个人情况说明》（加盖公章）、《解除劳动合同报告书》。
+        注：如非本人办理，代办人补缴还需携带经办人身份证、养老退休待遇审批表。
+      end: 0
+      main_intent: ask-supplement-material
+      main_intent_zh: 补缴-材料
+      human_relation: '{human_relation}'
+  utter_payment-start_time-employee:
+  - custom:
+      text: |
+        您好：
+        1、首次参加职工医保，当月正常缴费次月享受待遇。
+        2、如果医保中断后重新参保，参保单位自补齐欠费和滞纳金次月起，恢复其职工医保待遇
+      end: 0
+      main_intent: ask-payment-start_time
+      main_intent_zh: 缴费-缴费后待遇开始时间
+      human_relation: '{human_relation}'
+  utter_payment-start_time-resident:
+  - custom:
+      text: |
+        您好：
+        集中缴费期内未及时缴纳居民医保费的，需从参保缴费开始计算3个月等待期，等待期后才能享受居民医保待遇，补缴期间、等待期间发生的医疗费不纳入医保报销范围。
+      end: 0
+      main_intent: ask-payment-start_time
+      main_intent_zh: 缴费-缴费后待遇开始时间
+      human_relation: '{human_relation}'
+  utter_payment-start_time-flexible_employee_over3months:
+  - custom:
+      text: |
+        您好，灵活就业人员中断缴费超过3个月的，设置3个月的待遇享受等待期（含缴费当月）。
+      end: 0
+      main_intent: ask-payment-start_time
+      main_intent_zh: 缴费-缴费后待遇开始时间
+      human_relation: '{human_relation}'
+  utter_payment-start_time-flexible_employee_in3months:
+  - custom:
+      text: |
+        您好，灵活就业人员中断缴费未超过3个月的，自补齐欠费的次月起，恢复其医保待遇。
+      end: 0
+      main_intent: ask-payment-start_time
+      main_intent_zh: 缴费-缴费后待遇开始时间
+      human_relation: '{human_relation}'
+  utter_faq/ask-supplement_general-medical_insurance_unreceived_after_supplement:
+  - custom:
+      text: |
+        您好，医保费用会在补收缴费完成后三到五个工作日到账。
+      end: 0
+      main_intent: faq/ask-supplement_general-medical_insurance_unreceived_after_supplement
+      main_intent_zh: 补缴精准问答-补缴之后，医保未到账
+      human_relation: '{human_relation}'
+  utter_payment-standard-flexible_employment:
+  - custom:
+      text: |
+        您好，灵活就业人员按照个人缴费基数的8.5%缴纳。
+        灵活就业人员缴费基数的选择有两种，
+        第一种：在全省全口径城镇单位就业人员平均工资的60%—300%之间自行选择缴费基数；
+        第二种：以全省全口径城镇单位就业人员平均工资的60%、80%、100%、200%、300%五档中任意一档作为缴费基数。
+        办理材料：凭本人身份证或户口簿原件及复印件到指定银行网点办理参保缴费。
+      end: 0
+      main_intent: ask-payment-standard
+      main_intent_zh: 缴费-标准
+      human_relation: '{human_relation}'
+  utter_long_term_care-medical_treatment-employee:
+  - custom:
+      text: |
+        1、护理保险待遇包含医疗服务和照护服务待遇。
+        （1）医疗服务费和照护服务费符合《青岛市长期护理保险支付范围》的，按规定予以支付；
+        （2）超出支付范围、规定服务时间、项目支付标准和限额标准的，由个人自负。
+        2、职工失能人员报销标准如下：
+        （1）医疗服务费：参保职工发生的符合规定的费用，报销比例为90%；
+        （2）照护服务费最高支付标准：需求等级评估为三、四、五级的分别为660元/月、1050元/月、1500元/月；重度失智人员照护服务费1500元/月
+      end: 0
+      main_intent: ask-long_term_care-medical_treatment
+      main_intent_zh: 长期护理-享受待遇
+      human_relation: '{human_relation}'
+  utter_long_term_care-medical_treatment-resident:
+  - custom:
+      text: |
+        1、护理保险待遇包含医疗服务和照护服务待遇。
+        （1）医疗服务费和照护服务费符合《青岛市长期护理保险支付范围》的，按规定予以支付；
+        （2）超出支付范围、规定服务时间、项目支付标准和限额标准的，由个人自负。
+        2、居民失能人员报销标准如下：
+        （1）医疗服务费：参保居民发生的符合规定的费用，一档缴费的成年居民报销比例为80%，二档缴费的成年居民报销比例为75%。
+        （2）照护服务费最高支付标准：需求等级评估为三、四、五级的分别为450元/月、660元/月、1050元/月；重度失智人员照护服务费1050元/月
+      end: 0
+      main_intent: ask-long_term_care-medical_treatment
+      main_intent_zh: 长期护理-享受待遇
+      human_relation: '{human_relation}'
+  utter_long_term_care-medical_treatment-poverty_objects:
+  - custom:
+      text: |
+        1、护理保险待遇包含医疗服务和照护服务待遇。
+        （1）医疗服务费和照护服务费符合《青岛市长期护理保险支付范围》的，按规定予以支付；
+        （2）超出支付范围、规定服务时间、项目支付标准和限额标准的，由个人自负。
+        2、特困人员报销标准如下：
+        特困人员发生的长期护理保险医疗护理费用全额救助，每年限额5000元。
+      end: 0
+      main_intent: ask-long_term_care-medical_treatment
+      main_intent_zh: 长期护理-享受待遇
+      human_relation: '{human_relation}'
+  utter_long_term_care-medical_treatment-low_insured_objects:
+  - custom:
+      text: |
+        1、护理保险待遇包含医疗服务和照护服务待遇。
+        （1）医疗服务费和照护服务费符合《青岛市长期护理保险支付范围》的，按规定予以支付；
+        （2）超出支付范围、规定服务时间、项目支付标准和限额标准的，由个人自负。
+        2、低保人员（包含低保家庭成员）报销标准如下：
+        低保人员（包含低保家庭成员）发生的长期护理保险医疗护理费用90%救助，每年限额5000元，超出部分需自付。
+      end: 0
+      main_intent: ask-long_term_care-medical_treatment
+      main_intent_zh: 长期护理-享受待遇
+      human_relation: '{human_relation}'
+  utter_long_term_care-payment_ratio-employee:
+  - custom:
+      text: |
+        您好，职工长期护理险缴纳比例如下：
+        1、按照基本医疗保险缴费基数总额0.3%的比例，从职工基本医疗保险统筹基金中按月划转；
+        2、以在职职工基本医疗保险个人缴费基数为基数、退休人员基本医疗保险个人账户划入基数为基数,按照0.2%的比例,从应划入基本医疗保险个人账户的资金中,在计入本人基本医疗保险个人账户前按月划转;
+        3、财政部门按照参保职工每人每年30元标准予以补贴,补贴资金由市与区(市)两级财政按1∶1比例负担。
+      end: 0
+      main_intent: ask-long_term_care-payment_ratio
+      main_intent_zh: 长期护理-缴费比例
+      human_relation: '{human_relation}'
+  utter_long_term_care-payment_ratio-resident:
+  - custom:
+      text: |
+        您好，居民长期护理险缴纳比例如下：
+        1、按照每人每年不低于10元的标准,从居民社会医疗保险个人缴费资金中按年度划转,自2021年度起执行;
+        2、按照每人每年不低于20元的标准,从居民社会医疗保险财政补贴资金中按年度划转,自2022年度起执行。
+        3、自2023年度起财政补贴标准每人每年再提高30元。
+      end: 0
+      main_intent: ask-long_term_care-payment_ratio
+      main_intent_zh: 长期护理-缴费比例
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care-conditions:
+  - custom:
+      text: |
+        您好，申请长期护理保险需要满足以下条件：
+          1、参加职工医保或居民医保。
+          2、失能失智长期护理保险参保人因年老、疾病、伤残等原因生活不能自理已达或预期达六个月以上。
+          3、经申请通过评估认定符合条件的，可按规定享受相关待遇。
+      end: 0
+      main_intent: faq/ask-long_term_care-conditions
+      main_intent_zh: 长期护理精准问答-申请条件
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-explanation:
+  - custom:
+      text: |
+        您好，长期护理保险是为因年老、疾病、伤残等导致生活不能自理的重度失能失智人员，提供基本生活照料和与基本生活密切相关的医疗护理等基本照护服务保障或资金保障；为轻中度失能失智人员及高危人群提供功能维护等训练和指导保障，预防和延缓失能失智。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-explanation
+      main_intent_zh: 长期护理精准问答-名词解释
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-service:
+  - custom:
+      text: |
+        您好，长期护理服务形式如下：
+        1、居家照护。失能人员居家生活期间，由定点护理机构上门提供照护服务。失能人员照护需求等级评估为三、四、五级的，每周最多可纳入护理保险资金支付的照护服务时长：参保职工分别为3、5、7小时，参保居民分别为2、3、5小时。
+        2、机构照护。失能失智人员入住定点护理机构，由该机构提供的长期照护服务。失能失智人员发生的照护服务费用最高支付标准：评估等级为三、四、五级的失能参保职工分别为22元/天、35元/天和50元/天，参保居民分别为15元/天、22元/天和35元/天。失智参保职工为50元/天，参保居民为35元/天。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-service
+      main_intent_zh: 长期护理精准问答-服务形式
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-hospitalized_procedure:
+  - custom:
+      text: |
+        您好，参保人在享受长期护理保险待遇期间，因病情变化需住院治疗的，需先在定点护理服务机构办理结算后，家属即可携带参保人社保卡及身份证到定点医院办理住院手续。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-hospitalized_procedure
+      main_intent_zh: 长期护理精准问答-住院手续
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-min_payment:
+  - custom:
+      text: |
+        长期护理保险不设定起付线。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-min_payment
+      main_intent_zh: 长期护理精准问答-起付线
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-emergency_hospitalization_reimbursement:
+  - custom:
+      text: |
+        1、参保人在床期间，在本市定点医院发生的门、急诊（急诊留观时间不足24小时的）医疗费，经定点护理机构审核同意，相关医疗费用可按规定纳入护理保险医疗服务结算范围；
+        2、急诊留观时间超过24小时或不足24小时抢救无效死亡的，按照基本医疗保险有关规定结算。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-emergency_hospitalization_reimbursement
+      main_intent_zh: 长期护理精准问答-急诊住院报销
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-insured_register:
+  - custom:
+      text: |
+        社会医疗保险参保人应同步参加职工或居民护理保险。参保人无需专门办理护理保险参保登记手续。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-insured_register
+      main_intent_zh: 长期护理精准问答-参保登记
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-group:
+  - custom:
+      text: |
+        青岛市参加职工社会医疗保险的参保人,同步参加职工护理保险；参加居民社会医疗保险的参保人,同步参加居民护理保险。因年老、疾病、伤残等原因,基本生活不能自理已达六个月或预期持续六个月以上，可以申请长期护理保险。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-group
+      main_intent_zh: 长期护理精准问答-服务人群
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-other_medical_treatment:
+  - custom:
+      text: |
+        参保人享受护理保险待遇期间，已取得无限额门诊慢特病资格的可以同时享受社会医疗保险门诊统筹、门诊慢特病待遇，其他人员不得同时享受住院、门诊等社会医疗保险待遇。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-other_medical_treatment
+      main_intent_zh: 长期护理精准问答-享受其他医疗待遇
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-material:
+  - custom:
+      text: |
+        您好，需要准备以下三种材料:
+        (一)《青岛市失能失智人员照护需求等级评估申请表》；
+        (二)重度失智人员出具《中文简易智能精神状态检查量表(MMSE量表)》；
+        (三)相关疾病诊断的病历材料。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-material
+      main_intent_zh: 长期护理精准问答-申请材料
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-lasting_time:
+  - custom:
+      text: |
+        办理长期护理保险待遇需要30个工作日。绿色通道（气切、昏迷患者）10个工作日。耐心等待即可。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-lasting_time
+      main_intent_zh: 长期护理精准问答-办理时长
+      human_relation: '{human_relation}'
+  utter_faq/ask-long_term_care_general-progress_inquiry:
+  - custom:
+      text: |
+        微信搜索““青岛医疗保障””公众号，点击进入后，依次点击“掌办大厅”——“掌上办·我的医保”，在“医保常用”中点击“长期护理”中“审批信息查询”。
+      end: 0
+      main_intent: faq/ask-long_term_care_general-progress_inquiry
+      main_intent_zh: 长期护理精准问答-查询进度
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-shinan:
+  - custom:
+      text: |
+        市南分中心地址：山东省青岛市市南区福州南路17号青岛市民中心2楼M区，电话：0532-85770358
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-shibei:
+  - custom:
+      text: |
+        市北分中心地址：山东省青岛市市北区台柳路179号和达中心城B座2楼，电话：0532-85770358
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-licang:
+  - custom:
+      text: |
+        李沧分中心地址：山东省青岛市李沧区永年路27号社保服务大厅1楼，电话：0532-85770358
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-laoshan:
+  - custom:
+      text: |
+        崂山区医保经办机构地址：山东省青岛市崂山区新锦路6号行政服务中心5楼，电话：0532-88997557
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-xihaian:
+  - custom:
+      text: |
+        西海岸新区医保经办机构地址：山东省青岛市黄岛区双珠路166号2号楼4楼、5楼，电话：0532-86166186
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-chengyang:
+  - custom:
+      text: |
+        城阳区医保经办机构地址：山东省青岛市城阳区文阳路675 号城阳区政务服务中心1楼，电话：0532-58659920
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-jimo:
+  - custom:
+      text: |
+        即墨区医保经办机构地址：山东省青岛市即墨区创智新区振武路496号3楼社保医保联合窗口，电话：0532-88512393
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-jiaozhou:
+  - custom:
+      text: |
+        胶州市医保经办机构地址：山东省青岛市胶州市北京路2号行政服务西楼裙4楼，电话：0532-82212393
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-pingdu:
+  - custom:
+      text: |
+        平度市医保经办机构地址：山东省青岛市平度市北京路379号-2号平度市民中心2号楼B区2楼，电话：0532-88361291
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-laixi:
+  - custom:
+      text: |
+        莱西市医保经办机构地址：山东省青岛市莱西市长岛路148号行政审批大厅5楼，电话：0532-66030366
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_agency-address_phonenumber-baoshui:
+  - custom:
+      text: |
+        保税区社会保障中心地址：山东省青岛前湾保税港区鹏湾路68号政务服务和公共资源交易大厅2楼，电话：0532-86768802
+      end: 0
+      main_intent: ask-agency-address_phonenumber
+      main_intent_zh: 医保经办机构-地址电话
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-resident:
+  - custom:
+      text: |
+        您好，居民医保不能进行转移
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-retired_employee:
+  - custom:
+      text: |
+        您好，退休职工无法转移医保，享受原地待遇，具体可咨询参保地
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-employee_transfer_in_online:
+  - custom:
+      text: |
+        您好，可以登录青岛市医疗保障局官网或关注青岛医疗保障微信公众号进行办理转入。
+        一、青岛医疗保障局官网办理流程如下：
+        1、登录“青岛市医疗保障局”官网；
+        2、依次找到“网办大厅、个人办事、跨省通办、基本医疗保险转移转入申请”；
+        3、填写相关信息并提交。
+        二、青岛医疗保障微信公众号办理流程如下：
+        1、微信公众号关注“青岛医疗保障”；
+        2、依次找到“掌办大厅、掌上办我的医保、登录、首页、更多功能、医保征缴、医疗保险关系转入（国家平台）”；
+        3、填写相关信息并提交。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-employee_transfer_in_onsite:
+  - custom:
+      text: |
+        您好，到医保关系转移接续的转入地或转出地经办机构均可申请办理职工基本医保关系转移。
+        需携带材料：身份证或社保卡或电子医保凭证、如转出地未开通电子化转移的需提供转出地医疗参保凭证。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-employee_transfer_out_online:
+  - custom:
+      text: |
+        您好，可以登录青岛市医疗保障局官网(网址： http://ybj.qingdao.gov.cn )或关注青岛医疗保障微信公众号进行办理转出
+        一、网上办理流程如下：
+        1、登录“青岛市医疗保障局”官网；
+        2、依次找到"网办大厅、个人办事、跨省通办、基本医疗保险转移转出申请"；
+        3、填写相关信息并提交。
+        二、青岛医疗保障微信公众号办理流程如下：
+        1、微信公众号关注“青岛医疗保障”；
+        2、依次找到“掌办大厅、掌上办我的医保、登录、首页、更多功能、医保征缴、医疗保险关系转出（国家平台）”；
+        3、填写相关信息并提交。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-process-employee_transfer_out_onsite:
+  - custom:
+      text: |
+        您好，到医保关系转移接续的转入地或转出地经办机构均可申请办理职工基本医保关系转移
+        需携带材料：身份证或社保卡或电子医保凭证。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-process
+      main_intent_zh: 医保转移-转移流程
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-condition-resident:
+  - custom:
+      text: |
+        您好，居民医保不能进行转移。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-condition
+      main_intent_zh: 医保转移-转移条件
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-condition-retired_employee:
+  - custom:
+      text: |
+        您好，退休职工无法转移医保，享受原地待遇，具体可咨询参保地
+      end: 0
+      main_intent: ask-medical_insurance_transfer-condition
+      main_intent_zh: 医保转移-转移条件
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-condition-employee_transfer_in:
+  - custom:
+      text: |
+        您好，办理医保转移转入需要同时具备以下三个条件：
+        （1）在转出地暂停职工医疗保险；
+        （2）在转出地无欠费记录；
+        （3）在我市参加职工医疗保险。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-condition
+      main_intent_zh: 医保转移-转移条件
+      human_relation: '{human_relation}'
+  utter_medical_insurance_transfer-condition-employee_transfer_out:
+  - custom:
+      text: |
+        您好，办理医保关系转出需要同时具备以下三个条件：
+        （1）在我市暂停职工医疗保险；
+        （2）在我市无欠费记录、无个人医保账户待注入金；
+        （3）在转入地参加职工医疗保险。
+      end: 0
+      main_intent: ask-medical_insurance_transfer-condition
+      main_intent_zh: 医保转移-转移条件
+      human_relation: '{human_relation}'
+  utter_faq/ask-medical_insurance_transfer-methods:
+  - custom:
+      text: |
+        您好，办理医保关系转移有两种方式:
+        1、现场办理：到医保关系转移接续的转入地或转出地经办机构均可申请办理职工基本医保关系转移。
+        2、网上办理：
+        （1)参保人可登录“青岛市医疗保障局”官网（http://ybj.qingdao.gov.cn）办理。办理流程如下：登录“青岛市医疗保障局”官网，依次找到“网办大厅、个人办事、跨省通办、基本医疗保险转移转入申请或基本医疗保险转移转出申请”，填写相关信息并提交。
+        (2)参保人可关注“青岛医疗保障”微信公众号办理。办理流程如下：关注“青岛医疗保障”微信公众号，依次找到“掌办大厅、掌上办我的医保、登录、首页、更多功能、医保征缴、医疗保险关系转出（国家平台）或医疗保险关系转入（国家平台）”。
+      end: 0
+      main_intent: faq/ask-medical_insurance_transfer-methods
+      main_intent_zh: 医保转移-办理方式
+      human_relation: '{human_relation}'
+  utter_faq/ask-medical_insurance_transfer-lasting_period:
+  - custom:
+      text: |
+        您好，通过现场或者网上办理，省内9个工作日，跨省15个工作日。
+      end: 0
+      main_intent: faq/ask-medical_insurance_transfer-lasting_period
+      main_intent_zh: 医保转移-办理时长
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-resident_local:
+  - custom:
+      text: |
+        您好，城乡居民参保登记需要携带以下材料:
+        (1) 本人身份证或户口簿原件（开通电子证照的，可无需提供原件）；
+        (2)《城乡居民基本医疗保险参保登记表》。
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-resident_non_local:
+  - custom:
+      text: |
+        您好，非本市居民参保登记需要携带以下材料:
+        （1）本人身份证、《山东省居住证》原件（开通电子证照的，可无需提供原件）。
+        （2）非学籍少年儿童，需提供户口簿（父母一方关系证明）、《山东省居住证》原件（开通电子证照的，可无需提供原件）、《城乡居民基本医疗保险参保登记表》。
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-company:
+  - custom:
+      text: |
+        您好，单位为员工参保需要以下材料:
+        1、普通员工参保：经办人身份证、《企业单位医疗保险人员增减变化表》；
+        2、港澳台员工参保：除上述第一条，外还需提供《港澳台居民来往内地通行证》；
+        3、外籍员工参保：除上述第一条外，还需提供员工护照，并填写《企业单位医疗保险人员增减变化表》。
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-children_student:
+  - custom:
+      text: |
+        您好：
+        1、学生由学校或学前教育机构统一整理在校生花名册进行参保登记。
+        2、非本市户籍未入学少年儿童，需提供户口簿（父母一方关系证明）、《山东省居住证》原件（开通电子证照的，可无需提供原件）、《城乡居民基本医疗保险参保记表》。
+        3、本市户籍未入学少年儿童，需提供户口簿（父母一方关系证明）、《城乡居民基本医疗保险参保记表》。
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-flexible_employee:
+  - custom:
+      text: |
+        您好：
+           灵活就业人员凭本人身份证或户口簿原件前往交通银行/农业银行/农商银行/工商银行/青岛邮政/青岛银行进行参保登记和缴费。
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-material-special_group:
+  - custom:
+      text: |
+        您好，港澳台人员、外国人携带材料如下：
+        1、特殊人群参加居民保险：
+           (1) 港澳台人员需提供《港澳台居民来往内地通行证》和《城乡居民基本医疗保险参保登记表》；
+           (2) 外国人需提供《外国人永久居留证》和《城乡居民基本医疗保险参保登记表》
+        2、特殊人群参加职工保险：
+           (1)单位为港澳台员工办理医保需要提供《企业单位医疗保险人员增减变化表》、《港澳台居民来往内地通行证》、经办人身份证。
+           (2)单位为外国人办理医保需要准备员工护照、《企业单位医疗保险人员增减变化表》、经办人身份证。"
+      end: 0
+      main_intent: ask-insurance_registration-material
+      main_intent_zh: 参保登记-办理材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-resident:
+  - custom:
+      text: |
+        您好，城乡居民办理医保需要准备：有效身份证件（开通电子证照的，可无需提供、《城乡居民基本医疗保险参保登记表》进行参保登记，办理方式如下：
+        （一）现场办理
+        城乡居民户籍所在地的街道办事处（镇人民政府）、街道保障中心和居（村）民委员会。
+        （二）网上办理
+        青岛市医疗保障局官网：http://ybj.qingdao.gov.cn
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-company:
+  - custom:
+      text: |
+        准备经办人身份证、《人员增减花名册》
+        （一）现场办理
+        （二）网上办理
+        青岛市医疗保障局官网：http://ybj.qingdao.gov.cn
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-undergraduate:
+  - custom:
+      text: |
+        各类学校、学前教育机构负责本校（园）学生儿童的参保登记办理。
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-flexible_employee:
+  - custom:
+      text: |
+        您好，灵活就业人员可以前往交通银行/农业银行/农商银行/工商银行/青岛邮政/青岛银行进行参保登记和缴费。
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-children_non_local_non_school:
+  - custom:
+      text: |
+        您好，非本市学籍儿童参保登记流程如下：
+        1、携带户口簿（父母一方关系证明）、《山东省居住证》原件（开通电子证照的，可无需提供原件），前往就近的街道保障中心办理医保缴费；
+        2、登录“青岛市医疗保障局”官方网站（ http://ybj.qingdao.gov.cn ）进行办理；
+        3、通过网办大厅点击“个人办事”，登录后依次进入“个人网厅、医保征缴、城乡居民参保登记”；
+        4、通过“青岛医疗保障”微信公众号，依次进入“掌办大厅、掌上办、我的医保、居民医保、城乡居民参保登记并缴费”。
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-children_local_non_school:
+  - custom:
+      text: |
+        您好，本市户籍未入学的少年儿童办理医保缴费流程如下：
+        1、前往户籍所在地或者居住地的街道办事处（镇人民政府）和居（村）民委员会办理办理参保登记并缴费；
+        2、登录青岛市医疗保障局”官方网站（ http://ybj.qingdao.gov.cn ）；
+        3、“青岛医疗保障”微信公众号办理参保登记并缴费。
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-children:
+  - custom:
+      text: |
+        您好，本市中等以下学校学籍的全日制学生、学前教育机构在册儿童,以及其他具有本市户籍未满十八周岁的少年儿童由所在学校办理居民医疗保险参保登记并缴费
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-renewer:
+  - custom:
+      text: |
+        您好，续保人员在集中缴费期内直接通过税务部门提供的线上或线下缴费渠道完成缴费即可，无需再次登记
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-process-special_group:
+  - custom:
+      text: |
+        您好，港澳台人员、外国人需参加医保登记流程如下：
+        1、特殊人群参加居民保险：
+        （1）港澳台人员需提供《港澳台居民来往内地通行证》和《城乡居民基本医疗保险参保登记表》;外国人需提供《外国人永久居留证》和《城乡居民基本医疗保险参保登记表》。                                                                                                                     （2）现场办理：城乡居民户籍所在地的街道办事处（镇人民政府）、街道保障中心和居（村）民委员会。
+        （3）网上办理：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn   
+        2、特殊人群参加职工保险：
+        （1）单位为港澳台员工办理医保需要提供《企业单位医疗保险人员增减变化表》、《港澳台居民来往内地通行证》、经办人身份证；单位为外国人办理医保需要准备员工护照、《企业单位医疗保险人员增减变化表》、经办人身份证。
+        （2）现场办理：各区市医保机构。
+        （3）网上办理：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn
+      end: 0
+      main_intent: ask-insurance_registration-process
+      main_intent_zh: 参保登记-办理流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_shinan:
+  - custom:
+      text: |
+        市南分中心地址：山东省青岛市市南区福州南路17号青岛市民中心2楼M区，电话：0532-85770358
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_shibei:
+  - custom:
+      text: |
+        市北分中心地址：山东省青岛市市北区台柳路179号和达中心城B座2楼，电话：0532-85770358
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_licang:
+  - custom:
+      text: |
+        李沧分中心地址：山东省青岛市李沧区永年路27号社保服务大厅1楼，电话：0532-85770358
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_laoshan:
+  - custom:
+      text: |
+        崂山区医保经办机构地址：山东省青岛市崂山区新锦路6号行政服务中心5楼，电话：0532-88997557
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_xihaian:
+  - custom:
+      text: |
+        西海岸新区医保经办机构地址：山东省青岛市黄岛区双珠路166号2号楼4楼、5楼，电话：0532-86166186
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_chengyang:
+  - custom:
+      text: |
+        城阳区医保经办机构地址：山东省青岛市城阳区文阳路675 号城阳区政务服务中心1楼，电话：0532-58659920
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_jimo:
+  - custom:
+      text: |
+        即墨区医保经办机构地址：山东省青岛市即墨区创智新区振武路496号3楼社保医保联合窗口，电话：0532-88512393
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_jiaozhou:
+  - custom:
+      text: |
+        胶州市医保经办机构地址：山东省青岛市胶州市北京路2号行政服务西楼裙4楼，电话：0532-82212393
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_pingdu:
+  - custom:
+      text: |
+        平度市医保经办机构地址：山东省青岛市平度市北京路379号-2号平度市民中心2号楼B区2楼，电话：0532-88361291
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_laixi:
+  - custom:
+      text: |
+        莱西市医保经办机构地址：山东省青岛市莱西市长岛路148号行政审批大厅5楼，电话：0532-66030366
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-onsite_baoshui:
+  - custom:
+      text: |
+        保税区社会保障中心地址：山东省青岛前湾保税港区鹏湾路68号政务服务和公共资源交易大厅2楼，电话：0532-86768802
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_insurance_registration-progress_inquiry-online:
+  - custom:
+      text: |
+        您好，线上查询方式：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn。
+      end: 0
+      main_intent: ask-insurance_registration-progress_inquiry
+      main_intent_zh: 参保登记-办理进度查询
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_registration-payment_period:
+  - custom:
+      text: |
+        您好，自 2022 年起,居民基本医疗保险集中缴费期统一为每年的9－12月份。集中缴费期内未及时缴纳居民医保费的，需从参保缴费开始计算3个月等待期，等待期后才能享受居民医保待遇，补缴期间、等待期间发生的医疗费不纳入医保报销范围。（2023年起实施，持山东省居住证参保的，参照执行）。
+      end: 0
+      main_intent: faq/ask-insurance_registration-payment_period
+      main_intent_zh: 参保登记-集中缴费期
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_process-company:
+  - custom:
+      text: |
+        您好，单位参保变更信息需要准备营业执照原件、法人身份证原件（开通电子证照的，可无需提供）、发证部门出具的相关证明材料。
+        （一）现场办理
+        （二）网上办理：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_process
+      main_intent_zh: 参保登记-信息变更流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_process-employee:
+  - custom:
+      text: |
+        您好，职工参保变更信息需要携带身份证和户口簿原件（开通电子证照的，可无需提供）。
+        （一）现场办理
+        （二）网上办理：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_process
+      main_intent_zh: 参保登记-信息变更流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_process-resident:
+  - custom:
+      text: |
+        您好，居民参保信息变更需要携带身份证和户口簿原件（开通电子证照的，可无需提供）。
+        （一）现场办理
+        （二）网上办理：青岛市医疗保障局官网：http://ybj.qingdao.gov.cn。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_process
+      main_intent_zh: 参保登记-信息变更流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_material-company:
+  - custom:
+      text: |
+        您好，单位进行参保信息变更需要准备营业执照原件、法人身份证原件（开通电子证照的，可无需提供）、发证部门出具的相关证明材料。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_material
+      main_intent_zh: 参保登记-信息变更材料
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_material-employee_resident:
+  - custom:
+      text: |
+        您好，进行参保信息变更需要携带身份证和户口簿原件（开通电子证照的，可无需提供）。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_material
+      main_intent_zh: 参保登记-信息变更材料
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_registration-info_change_lasting_period:
+  - custom:
+      text: |
+        您好，参保登记办理当日就可以完成
+      end: 0
+      main_intent: faq/ask-insurance_registration-info_change_lasting_period
+      main_intent_zh: 参保登记-信息变更时长
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_content-company:
+  - custom:
+      text: |
+        您好，参保单位单位名称、住所（地址）、单位类型、法人、经办人等信息事项发生变更时，可以进行信息变更。
+      end: 0
+      main_intent: ask-insurance_registration-info_change_content
+      main_intent_zh: 参保登记-信息变更内容
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_change_content-employee_resident:
+  - custom:
+      text: |
+        您好，姓名、性别、身份证号、出生日期等信息发生变更时，可以进行信息变更
+      end: 0
+      main_intent: ask-insurance_registration-info_change_content
+      main_intent_zh: 参保登记-信息变更内容
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_inquiry_process-company:
+  - custom:
+      text: |
+        您好，需要准备单位授权书，可以通过以下方式进行查询：
+        （一）经办机构现场查询
+        （二）医疗保险自助查询终端查询
+        （三）青岛市医疗保障局官网查询： http://ybj.qingdao.gov.cn 。
+      end: 0
+      main_intent: ask-insurance_registration-info_inquiry_process
+      main_intent_zh: 参保登记-信息查询流程
+      human_relation: '{human_relation}'
+  utter_insurance_registration-info_inquiry_process-individual:
+  - custom:
+      text: |
+        您好，可以通过以下方式进行参保信息查询：
+        （一）经办机构现场查询（个人持身份证或社会保障卡通过服务大厅自助打印机、窗口查询打印参保缴费证明（个人权益记录））
+        （二）医疗保险自助查询终端查询
+        （三）青岛市医疗保障局官网查询： http://ybj.qingdao.gov.cn ，或微信公众号:“青岛医疗保障”进行查询
+      end: 0
+      main_intent: ask-insurance_registration-info_inquiry_process
+      main_intent_zh: 参保登记-信息查询流程
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_pause-same_id_exists_non_pause:
+  - custom:
+      text: |
+        请稍等，正在帮您转接人工服务！
+      end: 0
+      main_intent: faq/ask-insurance_pause-same_id_exists_non_pause
+      main_intent_zh: 停保-存在同身份证号且状态未终止的人员
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_pause-resident:
+  - custom:
+      text: |
+        您好，如果已缴费但未进入待遇享受期的是可以办理居民医保退费业务。
+      end: 0
+      main_intent: faq/ask-insurance_pause-resident
+      main_intent_zh: 停保-居民退保
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_pause-employee_supplement_impact_on_resident_insurance:
+  - custom:
+      text: |
+        您好，不会有影响的。
+      end: 0
+      main_intent: faq/ask-insurance_pause-employee_supplement_impact_on_resident_insurance
+      main_intent_zh: 停保-补缴职工保险对居民保险的影响
+      human_relation: '{human_relation}'
+  utter_faq/ask-insurance_pause-employee_pause_refund_material:
+  - custom:
+      text: |
+        您好，医保退费流程如下：
+        1、需要经办人的身份证、本人身份证、解除合同书、医保退费表、个人退费申请（个人签名手印）、单位退费申请（单位盖章）、退费本人无法到现场此业务还需提供委托书。
+        2、准备以上资料，等费用到账后，去现场办理退费。
+      end: 0
+      main_intent: faq/ask-insurance_pause-employee_pause_refund_material
+      main_intent_zh: 停保-职工停保退费材料
+      human_relation: '{human_relation}'
+  utter_insurance_pause-process-resident:
+  - custom:
+      text: |
+        您好，城乡居民办理暂停参保，按照如下流程进行操作：
+        关注“青岛医疗保障”微信公众号，登陆后点击掌办大厅，掌上办·我的医保，选择居民医保，点击城乡居民暂停参保。
+      end: 0
+      main_intent: ask-insurance_pause-process
+      main_intent_zh: 停保-停保流程
+      human_relation: '{human_relation}'
+  utter_insurance_pause-process-employee:
+  - custom:
+      text: |
+        您好，职工医保停保本人无法办理，只能通过单位来处理，有以下2种方式：
+        1、通过青岛医疗保障局官网的单位办事->医保征缴入口，登录后在“网上经办”内进行单位人员减少登记，如提示报错建议转人工具体查询。
+        2、窗口办理。
+      end: 0
+      main_intent: ask-insurance_pause-process
+      main_intent_zh: 停保-停保流程
+      human_relation: '{human_relation}'
+  utter_insurance_pause-process-student:
+  - custom:
+      text: |
+        您好，如果要办理居民医保停保业务，可以联系所在参保学校或者关注“青岛医疗保障”微信公众号办理停保业务,青岛医疗保障微信公众号办理流程：
+        关注“青岛医疗保障”微信公众号，登陆后点击掌办大厅，掌上办·我的医保，选择居民医保，点击城乡居民暂停参保。
+      end: 0
+      main_intent: ask-insurance_pause-process
+      main_intent_zh: 停保-停保流程
+      human_relation: '{human_relation}'
+  utter_insurance_pause-process-enterprise:
+  - custom:
+      text: |
+        您好，停保有以下2种方式：
+        1、通过青岛医疗保障局官网的单位办事，点击医保征缴入口，登录后在“网上经办”内进行单位人员减少登记，如提示报错建议转人工具体查询。
+        2、窗口办理。
+      end: 0
+      main_intent: ask-insurance_pause-process
+      main_intent_zh: 停保-停保流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-no_completed_social_insurance:
+  - custom:
+      text: |
+        您好，请先办理完成社保开户，否则无法办理企业医保开户。
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_no_haved_bank_account:
+  - custom:
+      text: |
+        您好，企业医保开户如没有开通银行账户，请先进行银行账户开通，然后按照以下流程进行企业医保账户开通：
+        请办理人携带营业执照，法人身份证，经办人身份证和公章到各区、市医保经办大厅或医保工作站进行现场办理。
+        现场办理，当天可以开户。
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_online:
+  - custom:
+      text: |
+        您好，青岛新公司开通医保账户已实现全市通办，办理流程如下：
+                  登录青岛市医疗保障局官网： http://ybj.qingdao.gov.cn  , 依次找到“单位办事、单位参保登记、单位参保登记开户”后录入银行账户，提交完成后，三到五个工作日内可以办理完成。
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_shinan:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        市南分中心地址：山东省青岛市市南区福州南路 17 号青岛市民中心 2 楼 M 区，电话：0532-85770358
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_shibei:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        市北分中心地址：山东省青岛市市北区台柳路 179 号和达中心城 B 座 2 楼，0532-85770358
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_licang:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        李沧分中心地址：山东省青岛市李沧区永年路 27 号社保服务大厅 1 楼，0532-85770358
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_laoshan:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        崂山区医保经办机构地址：山东省青岛市崂山区新锦路 6号行政服务中心 5 楼，0532-88997557
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_xihaian:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        西海岸新区医保经办机构地址：山东省青岛市黄岛区双珠路 166 号 2 号楼 4 楼、5 楼，0532-86166186
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_chengyang:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        城阳区医保经办机构地址：山东省青岛市城阳区文阳路675 号城阳区政务服务中心 1 楼，0532-58659920
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_jimo:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        即墨区医保经办机构地址：山东省青岛市即墨区创智新区振武路 496 号 3 楼社保医保联合窗口，0532-88512393
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_jiaozhou:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        胶州市医保经办机构地址：山东省青岛市胶州市北京路 2 号行政服务西楼裙 4 楼，0532-82212393
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_pingdu:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        平度市医保经办机构地址：山东省青岛市平度市北京路379 号-2 号平度市民中心 2 号楼 B 区 2 楼，0532-88361291
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_laixi:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        莱西市医保经办机构地址：山东省青岛市莱西市长岛路148 号行政审批大厅 5 楼，0532-66030366
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_enterprise-registration_process-is_completed_social_insurance_is_haved_bank_account_onsite_baoshui:
+  - custom:
+      text: |
+        您好，企业开户现场办理，需要携带营业执照，法人身份证，经办人身份证和公章从下方地址进行线下办理。
+        现场办理，当天可以开户。
+        保税区社会保障中心地址：山东省青岛前湾保税港区鹏湾路 68 号政务服务和公共资源交易大厅 2 楼，0532-86768802
+      end: 0
+      main_intent: ask-enterprise-registration_process
+      main_intent_zh: 企业-开户流程
+      human_relation: '{human_relation}'
+  utter_medical_account-reset_password-unit:
+  - custom:
+      text: |
+        您好单位的青岛市医保局密码可以根据以下方法进行重置：
+        （1）所需材料《青岛市医保局外网登录密码恢复申请表》（加盖单位公章）、营业执照原件或复印件（加盖单位公章）、法人身份证和经办人身份证原件（开通电子证照的可无需提供原件）
+        （2）操作步骤依次点击医保业务基础、综合查询、单位综合查询、输入单位信息、重置单位密码
+      end: 0
+      main_intent: ask-medical_account-reset_password
+      main_intent_zh: 医保账号-密码重置
+      human_relation: '{human_relation}'
+  utter_medical_account-reset_password-employee:
+  - custom:
+      text: |
+        您好，职工个人的青岛市医保局密码可以根据以下方法进行重置：
+                  （1）所需材料：本人身份证或社保卡或户口簿（开通电子证照的，可无需提供原件）。
+                  （2）操作步骤：依次点击“医保业务基础、综合查询、人员综合查询征缴、输入身份证号、重置个人密码”。
+      end: 0
+      main_intent: ask-medical_account-reset_password
+      main_intent_zh: 医保账号-密码重置
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-is_completed_social_insurance_retirement_with_debt:
+  - custom:
+      text: |
+        您好：需要办理完医保欠费补缴后再进行医保退休业务办理。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-is_completed_social_insurance_retirement_without_debt_model_retirement:
+  - custom:
+      text: |
+        您好，劳模退休办理医保退休业务流程如下：
+        社保退休办理完成后携带人员增减变化表、劳模证书、退休审批表，身份证等有效证件去往医保窗口办理即可。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-is_completed_social_insurance_retirement_without_debt_normal_retirement:
+  - custom:
+      text: |
+        您好，正常退休办理医保退休业务流程如下：
+        社保退休办理完成后携带退休审批表，身份证，等有效证件去往医保窗口办理即可。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-is_completed_social_insurance_retirement_without_debt_illness_retirement:
+  - custom:
+      text: |
+        您好，因病病退需要携带社保退休（养老退休）提供的病退表和办理人身份证即可办理。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-is_completed_social_insurance_retirement_without_debt_early_retirement:
+  - custom:
+      text: |
+        您好，提前退休人员办理医保退休业务一部分材料为退休人员身份证或社保卡、养老保险退休审核表，另一部分材料如下：
+        （1）行业统筹单位退休的需要携带《人员增减花名册》（加盖单位公章）、《省社保养老金核准表》；
+        （2）行业统筹单位退休（省社保审批过程中）的需要携带：《人员增减花名册》（加盖单位公章）、《省社保退休审核预审表》（或单位红头文件）、单位承诺书。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-not_completed_social_insurance_retirement_model_retirement:
+  - custom:
+      text: |
+        您好：
+               1、先办理养老退休（社保退休）。
+               2、养老退休办理办理完成后，在医保账户不欠费的情况下，携带人员增减变化表、劳模证书、退休审批表，身份证等有效证件去往医保窗口办理即可
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-not_completed_social_insurance_retirement_normal_retirement:
+  - custom:
+      text: |
+        您好：
+        1、先办理养老退休（社保退休）
+        2、养老退休办理办理完成后在医保账户不欠费的情况下携带退休审批表身份证等有效证件去往医保窗口办理即可
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-not_completed_social_insurance_retirement_illness_retirement:
+  - custom:
+      text: |
+        您好：
+        1、先办理养老退休（社保退休）
+        2、养老退休办理办理完成后在医保账户不欠费的情况下携带社保退休（养老退休）提供的病退表和办理人身份证即可办理
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'
+  utter_medical_retirement-process-not_completed_social_insurance_retirement_early_retirement:
+  - custom:
+      text: |
+        您好：
+               1、先办理养老退休（社保退休）。
+               2、养老退休办理办理完成后，在医保账户不欠费的情况下，携带退休人员身份证或社保卡、养老保险退休审核表到医保窗口办理医保退休。
+      end: 0
+      main_intent: ask-medical_retirement-process
+      main_intent_zh: 医保退休-办理流程
+      human_relation: '{human_relation}'

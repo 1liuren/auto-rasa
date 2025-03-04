@@ -11,6 +11,11 @@
         <h1>YAML Tree Diagram</h1>
         <input type="file" id="fileInput" accept=".yml,.yaml">
         <div id="treeDiagram"></div>
+        <div class="zoom-controls">
+            <button class="zoom-button" id="zoomIn">+</button>
+            <button class="zoom-button" id="zoomReset">重置</button>
+            <button class="zoom-button" id="zoomOut">-</button>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
